@@ -45,3 +45,5 @@ make_claude_repo_dump_current.py
 
 # local review dumps
 claude_full_dump*.md
+__pycache__/
+*.pyc
