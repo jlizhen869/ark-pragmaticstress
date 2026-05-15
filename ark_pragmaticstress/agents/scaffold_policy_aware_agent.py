@@ -22,8 +22,9 @@ class ScaffoldPolicyAwareAgent:
 
     name = "scaffold_policy_aware"
 
-    def __init__(self, scenario: Dict[str, Any]):
+    def __init__(self, scenario: Dict[str, Any], seed: int = 42):
         self.scenario = scenario
+        self.seed = seed
         self.model = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
         self.client = OpenAI(
             api_key=os.getenv("OPENAI_API_KEY"),
@@ -83,7 +84,7 @@ Write the next agent response.
                     {"role": "user", "content": user_prompt},
                 ],
                 temperature=0.2,
-                seed=42,
+                seed=self.seed,
                 max_tokens=400,
             )
             text = response.choices[0].message.content.strip()

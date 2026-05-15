@@ -32,12 +32,14 @@ def run_one(
     variant: str,
     agent_name: str,
     turns: int,
+    repeat_index: int = 0,
 ) -> Dict[str, Any]:
     persona_cls = PERSONA_REGISTRY[persona_name]
     agent_cls = AGENT_REGISTRY[agent_name]
 
-    persona = persona_cls(variant=variant, scenario_id=scenario_id)
-    agent = agent_cls(scenario=scenario)
+    seed = 42 + repeat_index
+    persona = persona_cls(variant=variant, scenario_id=scenario_id, seed=seed)
+    agent = agent_cls(scenario=scenario, seed=seed)
 
     history: List[Dict[str, Any]] = []
     while not should_stop(history, max_turns=turns):
@@ -93,7 +95,7 @@ def main() -> None:
         for agent_name in config["agents"]:
             for persona_name in config["personas"]:
                 for variant in config["variants"]:
-                    for _ in range(int(config.get("repeats", 1))):
+                    for repeat_index in range(int(config.get("repeats", 1))):
                         records.append(
                             run_one(
                                 scenario_id=scenario_id,
@@ -102,6 +104,7 @@ def main() -> None:
                                 variant=variant,
                                 agent_name=agent_name,
                                 turns=int(config.get("turns", 3)),
+                                repeat_index=repeat_index,
                             )
                         )
 

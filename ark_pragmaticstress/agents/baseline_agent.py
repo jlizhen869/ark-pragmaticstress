@@ -13,8 +13,9 @@ class BaselineAgent:
 
     name = "baseline"
 
-    def __init__(self, scenario: Dict[str, Any]):
+    def __init__(self, scenario: Dict[str, Any], seed: int = 42):
         self.scenario = scenario
+        self.seed = seed
 
     def respond(self, user_message: str, history: List[Dict[str, Any]]) -> Dict[str, Any]:
         lower = user_message.lower()
