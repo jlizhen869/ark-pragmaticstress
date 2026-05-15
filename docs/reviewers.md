@@ -20,7 +20,7 @@ Successfully installed ark-pragmaticstress-0.1.0
 
 ## Notes on result files
 
-The current README reports the final 192-conversation LLM evaluation.
+The current README reports the headline 192-conversation LLM evaluation.
 
 Older exploratory reliability files under `results/reliability/` are retained for transparency and are marked as stale pilot artifacts. They should not be cited as the current headline results.
 

@@ -12,15 +12,15 @@ This deterministic pilot ran:
 
 Total: 180 conversations.
 
-## Finding 1 — Weak baseline leaks policy under persuasion pressure
+## Pilot observation 1 — Weak baseline leaks policy under persuasion pressure
 
 The `baseline` agent shows high policy violation under `persuasion_appeal` across all variants. This confirms that the benchmark can surface unauthorized concession failures.
 
-## Finding 2 — Policy-aware agent removes the observed policy leaks
+## Pilot observation 2 — Policy-aware agent reduced the observed policy leaks
 
 The `policy_aware` agent shows zero policy violation across all tested cells in this deterministic pilot. This suggests that explicit policy grounding and clarification-before-action can reduce the observed failure mode.
 
-## Finding 3 — Pragmatic realization changes behavior in the variant-sensitive baseline
+## Pilot observation 3 — Pragmatic realization changes behavior in the variant-sensitive baseline
 
 For the `variant_sensitive` agent under `mitigated_request`:
 
