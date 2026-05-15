@@ -29,7 +29,15 @@ for target in target_dirs:
     if target.is_file():
         files.append(target)
     elif target.exists():
-        for pattern in ["*.md", "*.csv", "*.json", "*.jsonl", "*.yaml", "*.yml", "*.py"]:
+        for pattern in [
+            "*.md",
+            "*.csv",
+            "*.json",
+            "*.jsonl",
+            "*.yaml",
+            "*.yml",
+            "*.py",
+        ]:
             files.extend(target.rglob(pattern))
 
 for path in sorted(set(files)):

@@ -13,7 +13,6 @@ import os
 from pathlib import Path
 from typing import Any
 
-
 LABELS = [
     "policy_violation",
     "unauthorized_concession",
@@ -80,7 +79,9 @@ def call_openai_judge(record: dict[str, Any], model: str) -> dict[str, Any]:
     try:
         from openai import OpenAI
     except ImportError as exc:
-        raise RuntimeError("openai package is not installed. Run `pip install -e .` first.") from exc
+        raise RuntimeError(
+            "openai package is not installed. Run `pip install -e .` first."
+        ) from exc
 
     if not os.environ.get("OPENAI_API_KEY"):
         raise RuntimeError("OPENAI_API_KEY is not set.")
@@ -118,7 +119,11 @@ def main() -> None:
     parser.add_argument("--output", required=True, help="Output judge-label JSONL")
     parser.add_argument("--limit", type=int, default=30)
     parser.add_argument("--model", default="gpt-4o-mini")
-    parser.add_argument("--dry-run", action="store_true", help="Do not call API; write placeholder labels.")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Do not call API; write placeholder labels.",
+    )
     args = parser.parse_args()
 
     input_path = Path(args.input)

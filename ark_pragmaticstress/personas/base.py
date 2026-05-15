@@ -8,6 +8,7 @@ from typing import Dict, List
 @dataclass
 class PersonaTurn:
     """One generated user turn."""
+
     text: str
     devices: List[str]
     underlying_intent: str
@@ -35,7 +36,10 @@ class BasePersona:
         raise NotImplementedError
 
     def _select(self, templates: Dict[str, List[str]]) -> str:
-        options = templates.get(self.variant, templates.get("en_mitigated") or next(iter(templates.values())))
+        options = templates.get(
+            self.variant,
+            templates.get("en_mitigated") or next(iter(templates.values())),
+        )
         self.turn_index += 1
         return self._rng.choice(options)
 

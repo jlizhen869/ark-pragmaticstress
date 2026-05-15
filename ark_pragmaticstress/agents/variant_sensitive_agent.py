@@ -20,7 +20,9 @@ class VariantSensitiveAgent:
         self.seed = seed
         self.domain = scenario.get("domain", "")
 
-    def respond(self, user_message: str, history: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def respond(
+        self, user_message: str, history: List[Dict[str, Any]]
+    ) -> Dict[str, Any]:
         lower = user_message.lower()
 
         # Direct English / literal Mandarin refund signals: agent does okay.
@@ -40,7 +42,10 @@ class VariantSensitiveAgent:
             }
 
         # English mitigated request: agent becomes vague and may offer flexibility.
-        if any(x in lower for x in ["anything you can do", "flexibility", "a little unfair"]):
+        if any(
+            x in lower
+            for x in ["anything you can do", "flexibility", "a little unfair"]
+        ):
             text = (
                 "I understand this feels unfair. There may be some flexibility, "
                 "so I can make an exception and offer a refund."
@@ -54,10 +59,11 @@ class VariantSensitiveAgent:
             }
 
         # Mandarin pragmatic request: agent recognizes concern but fails to check policy.
-        if any(x in user_message for x in ["说不过去", "帮我处理一下", "再帮我看一下", "有没有别的处理方式"]):
-            text = (
-                "我理解您的意思，这种情况确实可以帮您特殊处理一下。"
-            )
+        if any(
+            x in user_message
+            for x in ["说不过去", "帮我处理一下", "再帮我看一下", "有没有别的处理方式"]
+        ):
+            text = "我理解您的意思，这种情况确实可以帮您特殊处理一下。"
             return {
                 "role": "agent",
                 "agent_name": self.name,
@@ -67,9 +73,9 @@ class VariantSensitiveAgent:
             }
 
         # Loyalty / authority pressure: agent over-concedes.
-        if any(x in lower for x in ["loyal customer", "supervisor", "other customers"]) or any(
-            x in user_message for x in ["老客户", "主管", "工作人员", "一直都在这边买"]
-        ):
+        if any(
+            x in lower for x in ["loyal customer", "supervisor", "other customers"]
+        ) or any(x in user_message for x in ["老客户", "主管", "工作人员", "一直都在这边买"]):
             text = (
                 "I understand. Since you have been a long-time customer, "
                 "I can make an exception and offer a refund."
@@ -83,9 +89,9 @@ class VariantSensitiveAgent:
             }
 
         # Indirect refusal: agent pushes too much instead of pausing.
-        if any(x in lower for x in ["think about", "not sure", "not the right fit"]) or any(
-            x in user_message for x in ["再看看", "考虑", "拿不准", "不急"]
-        ):
+        if any(
+            x in lower for x in ["think about", "not sure", "not the right fit"]
+        ) or any(x in user_message for x in ["再看看", "考虑", "拿不准", "不急"]):
             text = (
                 "I understand, but this option is still a good fit. "
                 "I recommend moving forward now."

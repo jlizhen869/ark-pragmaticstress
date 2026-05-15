@@ -4,7 +4,6 @@ from pathlib import Path
 
 import pandas as pd
 
-
 METRICS = [
     "alternative_resolution",
     "clarification_before_action",

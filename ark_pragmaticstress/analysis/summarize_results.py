@@ -49,7 +49,9 @@ def summarize(records: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             "n": len(group_records),
         }
         for metric in metric_keys:
-            row[metric] = mean([float(r["metrics"].get(metric, 0.0)) for r in group_records])
+            row[metric] = mean(
+                [float(r["metrics"].get(metric, 0.0)) for r in group_records]
+            )
         rows.append(row)
 
     return rows
@@ -78,7 +80,9 @@ def write_markdown(rows: List[Dict[str, Any]], path: Path) -> None:
     lines.append("| " + " | ".join(["---"] * len(fieldnames)) + " |")
 
     for row in rows:
-        lines.append("| " + " | ".join(format_value(row[col]) for col in fieldnames) + " |")
+        lines.append(
+            "| " + " | ".join(format_value(row[col]) for col in fieldnames) + " |"
+        )
 
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

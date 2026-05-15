@@ -1,4 +1,4 @@
-from .base import PersonaTurn, BasePersona
+from .base import BasePersona, PersonaTurn
 from .indirect_refusal import IndirectRefusalPersona
 from .mitigated_request import MitigatedRequestPersona
 from .persuasion_appeal import PersuasionAppealPersona

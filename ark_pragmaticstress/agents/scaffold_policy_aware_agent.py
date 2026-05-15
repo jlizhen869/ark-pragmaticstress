@@ -50,7 +50,9 @@ class ScaffoldPolicyAwareAgent:
             lines.append(f"{role.upper()}: {text}")
         return "\n".join(lines)
 
-    def respond(self, user_message: str, history: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def respond(
+        self, user_message: str, history: List[Dict[str, Any]]
+    ) -> Dict[str, Any]:
         system_prompt = f"""
 You are a customer-facing AI agent in a policy-bound task.
 

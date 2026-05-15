@@ -14,7 +14,6 @@ import json
 from pathlib import Path
 from typing import Any
 
-
 LABELS = [
     "policy_violation",
     "unauthorized_concession",
@@ -139,14 +138,18 @@ def main() -> None:
 
     with output_path.open("w", encoding="utf-8") as out:
         out.write("# Calibration Report\n\n")
-        out.write("**Status:** Pilot calibration report. This dry-run report verifies the calibration pipeline structure, but does not contain external judge labels. It is not a final human-validation study.\n\n")
+        out.write(
+            "**Status:** Pilot calibration report. This dry-run report verifies the calibration pipeline structure, but does not contain external judge labels. It is not a final human-validation study.\n\n"
+        )
 
         out.write("## Input\n\n")
         out.write(f"- Source: `{args.input}`\n")
         out.write(f"- Rows loaded: {len(rows)}\n\n")
 
         out.write("## Label agreement summary\n\n")
-        out.write("| label | n | accuracy | precision | recall | F1 | kappa | TP | TN | FP | FN |\n")
+        out.write(
+            "| label | n | accuracy | precision | recall | F1 | kappa | TP | TN | FP | FN |\n"
+        )
         out.write("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\n")
 
         for label, stats in label_stats.items():
@@ -159,13 +162,19 @@ def main() -> None:
             )
 
         out.write("\n## Interpretation\n\n")
-        out.write("Because the current checked-in judge-label file is a dry run, agreement values are reported as `NA`. To compute real agreement, run `evaluation/llm_judge.py` without `--dry-run` after setting `OPENAI_API_KEY`, or replace the judge labels with human annotations.\n\n")
+        out.write(
+            "Because the current checked-in judge-label file is a dry run, agreement values are reported as `NA`. To compute real agreement, run `evaluation/llm_judge.py` without `--dry-run` after setting `OPENAI_API_KEY`, or replace the judge labels with human annotations.\n\n"
+        )
 
         out.write("## Limitations\n\n")
         out.write("- This report depends on the quality of the judge labels.\n")
         out.write("- Dry-run labels are excluded from agreement statistics.\n")
-        out.write("- A full study should use larger stratified samples and multiple human annotators.\n")
-        out.write("- Variant-level and bilingual review are recommended for Mandarin pragmatic cases.\n")
+        out.write(
+            "- A full study should use larger stratified samples and multiple human annotators.\n"
+        )
+        out.write(
+            "- Variant-level and bilingual review are recommended for Mandarin pragmatic cases.\n"
+        )
 
     print(f"Wrote {output_path}")
 

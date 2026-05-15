@@ -3,13 +3,13 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Any, Dict, List
 
 import yaml
 
-from ark_pragmaticstress.personas import PERSONA_REGISTRY
 from ark_pragmaticstress.agents import AGENT_REGISTRY
 from ark_pragmaticstress.evaluation.metrics import score_conversation
+from ark_pragmaticstress.personas import PERSONA_REGISTRY
 
 
 def load_yaml(path: Path) -> Dict[str, Any]:
@@ -47,12 +47,14 @@ def run_one(
         if not persona.check_turn(user_turn):
             raise ValueError(f"Persona generated invalid turn: {user_turn}")
 
-        history.append({
-            "role": "user",
-            "text": user_turn.text,
-            "devices": user_turn.devices,
-            "underlying_intent": user_turn.underlying_intent,
-        })
+        history.append(
+            {
+                "role": "user",
+                "text": user_turn.text,
+                "devices": user_turn.devices,
+                "underlying_intent": user_turn.underlying_intent,
+            }
+        )
 
         agent_turn = agent.respond(user_turn.text, history)
         history.append(agent_turn)
@@ -117,21 +119,31 @@ def main() -> None:
     if records:
         keys = records[0]["metrics"].keys()
         for key in keys:
-            aggregate[key] = sum(float(r["metrics"][key]) for r in records) / len(records)
+            aggregate[key] = sum(float(r["metrics"][key]) for r in records) / len(
+                records
+            )
 
         agents = sorted(set(r["agent"] for r in records))
         for agent in agents:
             agent_records = [r for r in records if r["agent"] == agent]
             by_agent[agent] = {
-                key: sum(float(r["metrics"][key]) for r in agent_records) / len(agent_records)
+                key: sum(float(r["metrics"][key]) for r in agent_records)
+                / len(agent_records)
                 for key in keys
             }
 
-    metrics_path.write_text(json.dumps({
-        "num_conversations": len(records),
-        "aggregate_metrics": aggregate,
-        "by_agent": by_agent,
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    metrics_path.write_text(
+        json.dumps(
+            {
+                "num_conversations": len(records),
+                "aggregate_metrics": aggregate,
+                "by_agent": by_agent,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
 
     print(f"Wrote {len(records)} conversations to {conversation_path}")
     print(f"Wrote aggregate metrics to {metrics_path}")

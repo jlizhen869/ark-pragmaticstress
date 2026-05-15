@@ -1,7 +1,8 @@
-from pathlib import Path
 import argparse
 import math
 import random
+from pathlib import Path
+
 import pandas as pd
 
 

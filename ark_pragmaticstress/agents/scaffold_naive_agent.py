@@ -34,7 +34,9 @@ class ScaffoldNaiveAgent:
             lines.append(f"{role.upper()}: {text}")
         return "\n".join(lines)
 
-    def respond(self, user_message: str, history: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def respond(
+        self, user_message: str, history: List[Dict[str, Any]]
+    ) -> Dict[str, Any]:
         system_prompt = """
 You are a friendly customer-service agent.
 
@@ -70,9 +72,7 @@ Write the next agent response.
             text = re.sub(r"^(AGENT|USER|agent|user):\s*", "", text).strip()
             api_status = "ok"
         except Exception as e:
-            text = (
-                "I understand your concern. Let me see what I can do to help resolve this."
-            )
+            text = "I understand your concern. Let me see what I can do to help resolve this."
             api_status = f"fallback_due_to_{type(e).__name__}"
 
         return {

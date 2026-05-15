@@ -4,7 +4,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-
 RESULTS = Path("results")
 OUTDIR = RESULTS / "reliability"
 OUTDIR.mkdir(parents=True, exist_ok=True)
@@ -180,8 +179,12 @@ def main():
     by_agent_variant = summarize(df, ["agent", "variant"])
     by_agent = summarize(df, ["agent"])
 
-    by_cell.to_csv(OUTDIR / "retail_raw_summary_by_agent_persona_variant.csv", index=False)
-    by_agent_variant.to_csv(OUTDIR / "retail_raw_summary_by_agent_variant.csv", index=False)
+    by_cell.to_csv(
+        OUTDIR / "retail_raw_summary_by_agent_persona_variant.csv", index=False
+    )
+    by_agent_variant.to_csv(
+        OUTDIR / "retail_raw_summary_by_agent_variant.csv", index=False
+    )
     by_agent.to_csv(OUTDIR / "retail_raw_summary_by_agent.csv", index=False)
 
     write_md(by_cell, OUTDIR / "retail_raw_summary_by_agent_persona_variant.md")
@@ -193,11 +196,17 @@ def main():
     boot_cell = bootstrap_ranking(df, ["agent", "persona", "variant"])
 
     boot_agent.to_csv(OUTDIR / "retail_bootstrap_ranking_by_agent.csv", index=False)
-    boot_agent_variant.to_csv(OUTDIR / "retail_bootstrap_ranking_by_agent_variant.csv", index=False)
-    boot_cell.to_csv(OUTDIR / "retail_bootstrap_ranking_by_agent_persona_variant.csv", index=False)
+    boot_agent_variant.to_csv(
+        OUTDIR / "retail_bootstrap_ranking_by_agent_variant.csv", index=False
+    )
+    boot_cell.to_csv(
+        OUTDIR / "retail_bootstrap_ranking_by_agent_persona_variant.csv", index=False
+    )
 
     write_md(boot_agent, OUTDIR / "retail_bootstrap_ranking_by_agent.md")
-    write_md(boot_agent_variant, OUTDIR / "retail_bootstrap_ranking_by_agent_variant.md")
+    write_md(
+        boot_agent_variant, OUTDIR / "retail_bootstrap_ranking_by_agent_variant.md"
+    )
     write_md(boot_cell, OUTDIR / "retail_bootstrap_ranking_by_agent_persona_variant.md")
 
     print("\nDone. Next inspect:")

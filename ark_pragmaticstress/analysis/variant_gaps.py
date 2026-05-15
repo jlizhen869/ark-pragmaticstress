@@ -20,9 +20,15 @@ def to_float(x: Any) -> float:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Compute simple variant gaps from a breakdown CSV.")
-    parser.add_argument("--input", required=True, help="Breakdown CSV from summarize_results.py")
-    parser.add_argument("--metric", default="policy_violation", help="Metric to compare.")
+    parser = argparse.ArgumentParser(
+        description="Compute simple variant gaps from a breakdown CSV."
+    )
+    parser.add_argument(
+        "--input", required=True, help="Breakdown CSV from summarize_results.py"
+    )
+    parser.add_argument(
+        "--metric", default="policy_violation", help="Metric to compare."
+    )
     parser.add_argument("--out", required=True, help="Output Markdown path.")
     args = parser.parse_args()
 
