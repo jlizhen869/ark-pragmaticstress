@@ -3,8 +3,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 replacements = {
-    "openai_agent": "scaffold_policy_aware",
-    "openai_naive_agent": "scaffold_naive",
+    "scaffold_policy_aware_agent": "scaffold_policy_aware",
+    "scaffold_naive_agent": "scaffold_naive",
     "OpenAI-based agent baselines": "scaffold LLM agent baselines",
     "OpenAI-based agent baseline": "scaffold LLM agent baseline",
     "OpenAI-based agents": "scaffold LLM agents",

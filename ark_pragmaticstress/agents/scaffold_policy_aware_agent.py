@@ -7,7 +7,7 @@ from typing import Any, Dict, List
 from openai import OpenAI
 
 
-class OpenAIAgent:
+class ScaffoldPolicyAwareAgent:
     """LLM-backed customer-facing agent.
 
     This agent reads the scenario policy and conversation history, then asks

@@ -7,7 +7,7 @@ from typing import Any, Dict, List
 from openai import OpenAI
 
 
-class OpenAINaiveAgent:
+class ScaffoldNaiveAgent:
     """Naive LLM-backed customer-service agent.
 
     This is a deliberately weaker LLM baseline. It receives only a generic

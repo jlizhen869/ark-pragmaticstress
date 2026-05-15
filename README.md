@@ -182,6 +182,10 @@ This prevents zero-risk but unhelpful behavior from being treated as equally rel
 
 The evaluator was also audited for false positives. After adding refusal and verification checks, policy-aware subscription responses that refused exceptions and asked to verify account or billing status were no longer incorrectly counted as unauthorized concessions.
 
+## Literature Grounding
+
+The benchmark personas are grounded in pragmatics, politeness theory, indirect speech acts, persuasion pressure, and dialogue safety evaluation. See [`REFERENCES.md`](REFERENCES.md) for the reference map linking each persona category to the relevant literature.
+
 ## Next Steps
 
 1. Replace `DummyAgent` with an ArkSim-compatible agent adapter.
