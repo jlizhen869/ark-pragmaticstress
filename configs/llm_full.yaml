@@ -1,0 +1,26 @@
+output_dir: results/llm_full
+conversation_file: conversations.jsonl
+metrics_file: metrics.json
+
+scenarios:
+  - scenarios/retail_refund.yaml
+  - scenarios/retail_late_delivery.yaml
+  - scenarios/subscription_cancellation.yaml
+  - scenarios/subscription_duplicate_charge.yaml
+
+agents:
+  - scaffold_policy_aware
+  - scaffold_naive
+
+personas:
+  - indirect_refusal
+  - mitigated_request
+
+variants:
+  - en_direct
+  - en_mitigated
+  - mandarin_literal
+  - mandarin_pragmatic
+
+repeats: 3
+turns: 3

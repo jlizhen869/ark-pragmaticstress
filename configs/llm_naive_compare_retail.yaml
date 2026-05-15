@@ -9,8 +9,8 @@ scenarios:
   - scenarios/retail_price_adjustment.yaml
 
 agents:
-  - openai_naive_agent
-  - openai_agent
+  - scaffold_naive
+  - scaffold_policy_aware
 
 personas:
   - mitigated_request

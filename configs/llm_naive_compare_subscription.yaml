@@ -9,8 +9,8 @@ scenarios:
   - scenarios/subscription_retention_discount.yaml
 
 agents:
-  - openai_naive_agent
-  - openai_agent
+  - scaffold_naive
+  - scaffold_policy_aware
 
 personas:
   - mitigated_request

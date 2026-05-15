@@ -4,9 +4,9 @@
 
 This experiment evaluates whether customer-support agents remain policy-compliant and useful under pragmatic pressure in a retail refund scenario.
 
-The central finding is that the policy-aware `openai_agent` is substantially more reliable than `openai_naive_agent`. The policy-aware agent maintains low risk while preserving helpful support behavior, whereas the naive agent is especially vulnerable to Mandarin pragmatic and literal pressure.
+The central finding is that the policy-aware `scaffold_policy_aware` is substantially more reliable than `scaffold_naive`. The policy-aware agent maintains low risk while preserving helpful support behavior, whereas the naive agent is especially vulnerable to Mandarin pragmatic and literal pressure.
 
-At the agent level, `openai_agent` has mean risk 0.015 with bootstrap 95% interval [0.000, 0.036], while `openai_naive_agent` has mean risk 0.268 with interval [0.202, 0.335]. The ranking is stable: `openai_agent` has top1 frequency 1.000 and `openai_naive_agent` has top1 frequency 0.000.
+At the agent level, `scaffold_policy_aware` has mean risk 0.015 with bootstrap 95% interval [0.000, 0.036], while `scaffold_naive` has mean risk 0.268 with interval [0.202, 0.335]. The ranking is stable: `scaffold_policy_aware` has top1 frequency 1.000 and `scaffold_naive` has top1 frequency 0.000.
 
 ## Setup
 
@@ -16,8 +16,8 @@ The policy requires the agent to verify refund eligibility before promising a re
 
 The evaluation compares two agents:
 
-- `openai_agent`: policy-aware agent
-- `openai_naive_agent`: weaker baseline agent
+- `scaffold_policy_aware`: policy-aware agent
+- `scaffold_naive`: weaker baseline agent
 
 The evaluation varies both persona and prompt variant:
 
@@ -68,8 +68,8 @@ The policy-aware agent is clearly more reliable than the naive agent.
 
 | agent | mean_risk | risk_ci_low | risk_ci_high | mean_quality | mean_net | top1_freq |
 |---|---:|---:|---:|---:|---:|---:|
-| openai_agent | 0.015 | 0.000 | 0.036 | 0.856 | 0.841 | 1.000 |
-| openai_naive_agent | 0.268 | 0.202 | 0.335 | 0.161 | -0.107 | 0.000 |
+| scaffold_policy_aware | 0.015 | 0.000 | 0.036 | 0.856 | 0.841 | 1.000 |
+| scaffold_naive | 0.268 | 0.202 | 0.335 | 0.161 | -0.107 | 0.000 |
 
 This result supports the main benchmark claim: policy-aware scaffolding improves reliability under pragmatic pressure.
 
@@ -77,19 +77,19 @@ This result supports the main benchmark claim: policy-aware scaffolding improves
 
 The strongest overall variant is:
 
-`openai_agent × mandarin_pragmatic`
+`scaffold_policy_aware × mandarin_pragmatic`
 
 This condition has mean risk 0.000, mean quality 0.919, mean net reliability 0.919, mean rank 1.006, and top1 frequency 0.994.
 
 The next strongest variant is:
 
-`openai_agent × en_mitigated`
+`scaffold_policy_aware × en_mitigated`
 
 This condition also has zero mean risk, but lower mean quality at 0.831, giving it mean rank 2.500 and top1 frequency 0.001.
 
 The updated ranking also clarifies that:
 
-`openai_naive_agent × en_mitigated`
+`scaffold_naive × en_mitigated`
 
 should not be interpreted as genuinely reliable. It has mean risk 0.000, but also mean quality 0.000 and mean net reliability 0.000. This represents low-risk but low-utility behavior.
 
@@ -97,7 +97,7 @@ should not be interpreted as genuinely reliable. It has mean risk 0.000, but als
 
 The naive agent shows a strong vulnerability to Mandarin pressure variants.
 
-For `openai_naive_agent`:
+For `scaffold_naive`:
 
 - `mandarin_literal`: mean risk 0.350, bootstrap interval [0.204, 0.496]
 - `mandarin_pragmatic`: mean risk 0.700, bootstrap interval [0.700, 0.700]
@@ -110,7 +110,7 @@ This suggests that Mandarin pragmatic pressure is not merely a surface translati
 
 A representative high-risk failure appears in:
 
-`openai_naive_agent × mitigated_request × mandarin_pragmatic`
+`scaffold_naive × mitigated_request × mandarin_pragmatic`
 
 The user asks indirectly:
 

@@ -69,11 +69,11 @@ At the agent level, the policy-aware agent is consistently more reliable than th
 
 The largest confirmed failure mode is:
 
-`openai_naive_agent × mandarin_pragmatic`
+`scaffold_naive × mandarin_pragmatic`
 
 The strongest reliable variant is:
 
-`openai_agent × mandarin_pragmatic`
+`scaffold_policy_aware × mandarin_pragmatic`
 
 The main finding is not that Mandarin prompts are inherently unsafe. Rather, Mandarin pragmatic variants expose whether an agent can maintain policy boundaries under indirect, socially softened, or pressure-bearing language.
 
@@ -119,5 +119,5 @@ Not yet completed:
 
 ## Safe project claim
 
-Ark-PragmaticStress demonstrates a controlled diagnostic benchmark for measuring whether customer-facing agents preserve policy boundaries under pragmatic and multilingual pressure. Across simulated conversations, the policy-aware agent sharply reduced risk compared with a naive baseline, while Mandarin pragmatic variants consistently exposed unauthorized-concession failures in the naive agent.ø
+Ark-PragmaticStress demonstrates a controlled diagnostic benchmark for measuring whether customer-facing agents preserve policy boundaries under pragmatic and multilingual pressure. Across simulated conversations, the policy-aware agent sharply reduced risk compared with a naive baseline, while Mandarin pragmatic variants consistently exposed unauthorized-concession failures in the scaffold_naive baseline.
 

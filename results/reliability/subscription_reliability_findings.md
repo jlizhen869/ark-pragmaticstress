@@ -2,34 +2,34 @@
 
 ## 1. Agent-level reliability
 
-The policy-aware `openai_agent` substantially outperforms `openai_naive_agent` on the subscription and billing scenarios.
+The policy-aware `scaffold_policy_aware` substantially outperforms `scaffold_naive` on the subscription and billing scenarios.
 
-After the evaluator false-positive fix, `openai_agent` has zero observed risk across all subscription variants, while `openai_naive_agent` remains vulnerable to Mandarin pressure variants.
+After the evaluator false-positive fix, `scaffold_policy_aware` has zero observed risk across all subscription variants, while `scaffold_naive` remains vulnerable to Mandarin pressure variants.
 
 ## 2. Variant-level reliability
 
 The strongest variant is:
 
-`openai_agent × mandarin_pragmatic`
+`scaffold_policy_aware × mandarin_pragmatic`
 
 This condition has mean risk 0.000, mean quality 0.788, mean net reliability 0.788, mean rank 1.159, and top1 frequency 0.858.
 
 The next strongest variant is:
 
-`openai_agent × mandarin_literal`
+`scaffold_policy_aware × mandarin_literal`
 
 This condition has mean risk 0.000, mean quality 0.738, mean net reliability 0.738, mean rank 2.319, and top1 frequency 0.114.
 
 The remaining policy-aware variants are also zero-risk:
 
-- `openai_agent × en_direct`: mean risk 0.000, mean quality 0.700
-- `openai_agent × en_mitigated`: mean risk 0.000, mean quality 0.700
+- `scaffold_policy_aware × en_direct`: mean risk 0.000, mean quality 0.700
+- `scaffold_policy_aware × en_mitigated`: mean risk 0.000, mean quality 0.700
 
 ## 3. Naive agent failure pattern
 
 The naive agent still shows severe vulnerability to Mandarin pragmatic pressure.
 
-For `openai_naive_agent`:
+For `scaffold_naive`:
 
 - `mandarin_literal`: mean risk 0.350, bootstrap interval [0.204, 0.496]
 - `mandarin_pragmatic`: mean risk 0.700, bootstrap interval [0.700, 0.700]
@@ -42,8 +42,8 @@ Some naive-agent English variants have zero risk but very low quality.
 
 For example:
 
-- `openai_naive_agent × en_direct`: mean risk 0.000, mean quality 0.023
-- `openai_naive_agent × en_mitigated`: mean risk 0.000, mean quality 0.000
+- `scaffold_naive × en_direct`: mean risk 0.000, mean quality 0.023
+- `scaffold_naive × en_mitigated`: mean risk 0.000, mean quality 0.000
 
 This means the naive agent can appear safe in English conditions because it avoids explicit unsafe concessions, but it does not provide useful, policy-grounded assistance.
 
@@ -66,4 +66,4 @@ The subscription experiment now supports two claims:
 
 The subscription experiment replicates the retail finding: the policy-aware agent is substantially more reliable than the naive agent under multilingual pragmatic stress.
 
-The largest confirmed failure mode remains `openai_naive_agent × mandarin_pragmatic`, while the policy-aware agent remains zero-risk across all subscription variants after evaluator false-positive correction.
+The largest confirmed failure mode remains `scaffold_naive × mandarin_pragmatic`, while the policy-aware agent remains zero-risk across all subscription variants after evaluator false-positive correction.

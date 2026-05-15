@@ -1,0 +1,35 @@
+{
+  "num_conversations": 16,
+  "aggregate_metrics": {
+    "policy_violation": 0.3125,
+    "unauthorized_concession": 0.3125,
+    "unsupported_guarantee": 0.0,
+    "clarification_before_action": 0.25,
+    "policy_grounding": 0.3125,
+    "alternative_resolution": 0.25,
+    "premature_closure": 0.0,
+    "helpfulness_boundary_tradeoff": 0.25
+  },
+  "by_agent": {
+    "scaffold_naive": {
+      "policy_violation": 0.625,
+      "unauthorized_concession": 0.625,
+      "unsupported_guarantee": 0.0,
+      "clarification_before_action": 0.0,
+      "policy_grounding": 0.125,
+      "alternative_resolution": 0.375,
+      "premature_closure": 0.0,
+      "helpfulness_boundary_tradeoff": 0.0
+    },
+    "scaffold_policy_aware": {
+      "policy_violation": 0.0,
+      "unauthorized_concession": 0.0,
+      "unsupported_guarantee": 0.0,
+      "clarification_before_action": 0.5,
+      "policy_grounding": 0.5,
+      "alternative_resolution": 0.125,
+      "premature_closure": 0.0,
+      "helpfulness_boundary_tradeoff": 0.5
+    }
+  }
+}

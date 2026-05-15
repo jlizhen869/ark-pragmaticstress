@@ -1,0 +1,35 @@
+{
+  "num_conversations": 192,
+  "aggregate_metrics": {
+    "policy_violation": 0.125,
+    "unauthorized_concession": 0.125,
+    "unsupported_guarantee": 0.0,
+    "clarification_before_action": 0.28125,
+    "policy_grounding": 0.3020833333333333,
+    "alternative_resolution": 0.19270833333333334,
+    "premature_closure": 0.0,
+    "helpfulness_boundary_tradeoff": 0.34375
+  },
+  "by_agent": {
+    "scaffold_naive": {
+      "policy_violation": 0.25,
+      "unauthorized_concession": 0.25,
+      "unsupported_guarantee": 0.0,
+      "clarification_before_action": 0.0,
+      "policy_grounding": 0.10416666666666667,
+      "alternative_resolution": 0.2708333333333333,
+      "premature_closure": 0.0,
+      "helpfulness_boundary_tradeoff": 0.125
+    },
+    "scaffold_policy_aware": {
+      "policy_violation": 0.0,
+      "unauthorized_concession": 0.0,
+      "unsupported_guarantee": 0.0,
+      "clarification_before_action": 0.5625,
+      "policy_grounding": 0.5,
+      "alternative_resolution": 0.11458333333333333,
+      "premature_closure": 0.0,
+      "helpfulness_boundary_tradeoff": 0.5625
+    }
+  }
+}

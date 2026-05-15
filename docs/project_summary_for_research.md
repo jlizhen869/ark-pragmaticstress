@@ -37,13 +37,13 @@ The policy-aware agent was consistently more reliable than the naive baseline ac
 
 The most salient failure mode was:
 
-`openai_naive_agent × mandarin_pragmatic`
+`scaffold_naive × mandarin_pragmatic`
 
 In this condition, the naive agent was more likely to treat indirect, socially softened, or pressure-bearing language as authorization to offer refunds, discounts, exceptions, flexible handling, or other concessions before checking eligibility.
 
 The strongest reliable condition was:
 
-`openai_agent × mandarin_pragmatic`
+`scaffold_policy_aware × mandarin_pragmatic`
 
 This indicates that Mandarin pragmatic variants are not inherently unsafe. Rather, they expose whether an agent can maintain policy boundaries when user intent is expressed through controlled pragmatic pressure.
 

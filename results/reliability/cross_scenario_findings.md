@@ -2,25 +2,25 @@
 
 ## 1. Replicated agent-level result
 
-Across both retail and subscription/billing scenario groups, the policy-aware `openai_agent` is substantially more reliable than `openai_naive_agent`.
+Across both retail and subscription/billing scenario groups, the policy-aware `scaffold_policy_aware` is substantially more reliable than `scaffold_naive`.
 
 In retail:
 
-- `openai_agent`: mean risk 0.006, 95% interval [0.000, 0.019], mean quality 0.851
-- `openai_naive_agent`: mean risk 0.268, 95% interval [0.202, 0.338], mean quality 0.152
+- `scaffold_policy_aware`: mean risk 0.006, 95% interval [0.000, 0.019], mean quality 0.851
+- `scaffold_naive`: mean risk 0.268, 95% interval [0.202, 0.338], mean quality 0.152
 
 In subscription:
 
-- `openai_agent`: mean risk 0.000, 95% interval [0.000, 0.000], mean quality 0.731
-- `openai_naive_agent`: mean risk 0.262, 95% interval [0.197, 0.328], mean quality 0.148
+- `scaffold_policy_aware`: mean risk 0.000, 95% interval [0.000, 0.000], mean quality 0.731
+- `scaffold_naive`: mean risk 0.262, 95% interval [0.197, 0.328], mean quality 0.148
 
-In both scenario groups, `openai_agent` has top1 frequency 1.000 and `openai_naive_agent` has top1 frequency 0.000.
+In both scenario groups, `scaffold_policy_aware` has top1 frequency 1.000 and `scaffold_naive` has top1 frequency 0.000.
 
 ## 2. Mandarin pragmatic pressure consistently exposes naive-agent weakness
 
 The most severe confirmed failure mode is:
 
-`openai_naive_agent × mandarin_pragmatic`
+`scaffold_naive × mandarin_pragmatic`
 
 This variant has mean risk 0.700 in both retail and subscription, with zero-width bootstrap intervals [0.700, 0.700]. This means the high-risk pattern is stable across observed runs.
 
@@ -28,7 +28,7 @@ This variant has mean risk 0.700 in both retail and subscription, with zero-widt
 
 The strongest policy-aware variant in both scenario groups is:
 
-`openai_agent × mandarin_pragmatic`
+`scaffold_policy_aware × mandarin_pragmatic`
 
 In retail, it has mean risk 0.000, mean quality 0.919, mean rank 1.006, and top1 frequency 0.994.
 
@@ -42,9 +42,9 @@ Some naive-agent English variants have zero measured risk but very low quality.
 
 Examples:
 
-- retail `openai_naive_agent × en_mitigated`: mean risk 0.000, mean quality 0.000
-- subscription `openai_naive_agent × en_mitigated`: mean risk 0.000, mean quality 0.000
-- subscription `openai_naive_agent × en_direct`: mean risk 0.000, mean quality 0.023
+- retail `scaffold_naive × en_mitigated`: mean risk 0.000, mean quality 0.000
+- subscription `scaffold_naive × en_mitigated`: mean risk 0.000, mean quality 0.000
+- subscription `scaffold_naive × en_direct`: mean risk 0.000, mean quality 0.023
 
 This supports the use of a risk-first, quality-tiebreak ranking. A model that avoids explicit policy violations by giving empty or unhelpful responses should not be ranked as equally reliable as a model that is both safe and useful.
 

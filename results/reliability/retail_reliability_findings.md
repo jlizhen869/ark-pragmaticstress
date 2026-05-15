@@ -2,22 +2,22 @@
 
 ## 1. Agent-level reliability
 
-The policy-aware `openai_agent` substantially outperforms `openai_naive_agent` on the retail refund scenario.
+The policy-aware `scaffold_policy_aware` substantially outperforms `scaffold_naive` on the retail refund scenario.
 
-At the agent level, `openai_agent` has a mean risk score of 0.015 with a bootstrap 95% interval of [0.000, 0.036]. In contrast, `openai_naive_agent` has a much higher mean risk score of 0.268 with a bootstrap 95% interval of [0.202, 0.335].
+At the agent level, `scaffold_policy_aware` has a mean risk score of 0.015 with a bootstrap 95% interval of [0.000, 0.036]. In contrast, `scaffold_naive` has a much higher mean risk score of 0.268 with a bootstrap 95% interval of [0.202, 0.335].
 
-The ranking is also stable: `openai_agent` has `top1_freq = 1.000`, while `openai_naive_agent` has `top1_freq = 0.000`. This means the policy-aware agent is ranked as the safer agent in essentially every bootstrap resample.
+The ranking is also stable: `scaffold_policy_aware` has `top1_freq = 1.000`, while `scaffold_naive` has `top1_freq = 0.000`. This means the policy-aware agent is ranked as the safer agent in essentially every bootstrap resample.
 
 ## 2. Variant-level reliability
 
-For `openai_agent`, the safest variants are:
+For `scaffold_policy_aware`, the safest variants are:
 
 - `en_mitigated`
 - `mandarin_pragmatic`
 
 Both have mean risk score 0.000 and bootstrap risk interval [0.000, 0.000].
 
-For `openai_agent`, the riskier variants are:
+For `scaffold_policy_aware`, the riskier variants are:
 
 - `en_direct`
 - `mandarin_literal`
@@ -30,7 +30,7 @@ This suggests that the policy-aware agent is mostly robust across language and p
 
 The naive agent shows a strong vulnerability to Mandarin pressure variants.
 
-For `openai_naive_agent`:
+For `scaffold_naive`:
 
 - `mandarin_literal` has mean risk 0.350 with risk interval [0.204, 0.496].
 - `mandarin_pragmatic` has mean risk 0.700 with risk interval [0.700, 0.700].
@@ -43,7 +43,7 @@ This indicates that pragmatic Mandarin pressure is not merely a surface translat
 
 The mitigation variants reduce measured risk for both agents.
 
-For `openai_agent`, `en_mitigated` has zero measured risk and strong quality score. For `openai_naive_agent`, `en_mitigated` also has zero measured risk, but its quality score is 0.000.
+For `scaffold_policy_aware`, `en_mitigated` has zero measured risk and strong quality score. For `scaffold_naive`, `en_mitigated` also has zero measured risk, but its quality score is 0.000.
 
 This distinction is important: the naive agent appears safe in the mitigated English condition because it avoids unsafe concessions, but it also fails to provide helpful, policy-grounded support. In other words, low risk alone is not sufficient; quality metrics are needed to distinguish safe refusal from useful policy-compliant assistance.
 
@@ -53,8 +53,8 @@ The policy-aware agent maintains both low risk and high quality.
 
 At the agent level:
 
-- `openai_agent`: mean quality = 0.856, mean net reliability = 0.841.
-- `openai_naive_agent`: mean quality = 0.161, mean net reliability = -0.107.
+- `scaffold_policy_aware`: mean quality = 0.856, mean net reliability = 0.841.
+- `scaffold_naive`: mean quality = 0.161, mean net reliability = -0.107.
 
 This supports the benchmark design: the evaluation does not only reward refusal or inaction. It rewards agents that ask for order information, cite policy constraints, maintain boundaries, and offer authorized alternatives.
 
@@ -62,7 +62,7 @@ This supports the benchmark design: the evaluation does not only reward refusal 
 
 The clearest failure cell is:
 
-`openai_naive_agent × mitigated_request × mandarin_pragmatic`
+`scaffold_naive × mitigated_request × mandarin_pragmatic`
 
 This cell has:
 
@@ -76,7 +76,7 @@ This is a particularly interesting failure because the agent may appear helpful 
 
 Another severe cell is:
 
-`openai_naive_agent × mitigated_request × mandarin_literal`
+`scaffold_naive × mitigated_request × mandarin_literal`
 
 This cell also has:
 
@@ -108,19 +108,19 @@ This avoids treating zero-risk but unhelpful behavior as equally reliable as zer
 
 Under this updated ranking, the strongest variant is:
 
-`openai_agent × mandarin_pragmatic`
+`scaffold_policy_aware × mandarin_pragmatic`
 
 This condition has mean risk 0.000, mean quality 0.919, mean net reliability 0.919, mean rank 1.006, and top1 frequency 0.994.
 
 The next strongest variant is:
 
-`openai_agent × en_mitigated`
+`scaffold_policy_aware × en_mitigated`
 
 This condition also has mean risk 0.000, but lower mean quality at 0.831, giving it mean rank 2.500 and top1 frequency 0.001.
 
 The updated ranking also clarifies the behavior of:
 
-`openai_naive_agent × en_mitigated`
+`scaffold_naive × en_mitigated`
 
 Although this condition has mean risk 0.000, it also has mean quality 0.000 and mean net reliability 0.000. Therefore, it should not be interpreted as genuinely reliable. Rather, it represents low-risk but low-utility behavior.
 

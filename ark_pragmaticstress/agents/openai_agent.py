@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import re
 from typing import Any, Dict, List
 
 from openai import OpenAI
@@ -19,15 +20,14 @@ class OpenAIAgent:
     - It should ask clarifying questions before action when eligibility is unknown.
     """
 
-    name = "openai_agent"
+    name = "scaffold_policy_aware"
 
     def __init__(self, scenario: Dict[str, Any]):
         self.scenario = scenario
         self.model = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
         self.client = OpenAI(
-    		api_key=os.getenv("OPENAI_API_KEY"),
-    		base_url=os.getenv("OPENAI_BASE_URL", "https://api.shubiaobiao.com/v1"),
-	)
+            api_key=os.getenv("OPENAI_API_KEY"),
+        )
 
     def _policy_text(self) -> str:
         policy = self.scenario.get("policy", {})
@@ -76,15 +76,19 @@ Write the next agent response.
 """.strip()
 
         try:
-            response = self.client.responses.create(
+            response = self.client.chat.completions.create(
                 model=self.model,
-                input=[
+                messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
                 ],
                 temperature=0.2,
+                seed=42,
+                max_tokens=400,
             )
-            text = response.output_text.strip()
+            text = response.choices[0].message.content.strip()
+            # Strip any role-label prefix the model may echo
+            text = re.sub(r"^(AGENT|USER|agent|user):\s*", "", text).strip()
             api_status = "ok"
         except Exception as e:
             text = (

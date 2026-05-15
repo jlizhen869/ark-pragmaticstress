@@ -2,7 +2,7 @@
 
 These examples illustrate concrete failure modes behind the quantitative reliability results.
 
-## Example 1: `openai_naive_agent × mitigated_request × mandarin_literal`
+## Example 1: `scaffold_naive × mitigated_request × mandarin_literal`
 
 ### Metrics
 
@@ -30,7 +30,7 @@ These examples illustrate concrete failure modes behind the quantitative reliabi
 
 This example is high-risk because the agent discusses cancellation, credit, discount, or compensation-like action before verifying eligibility or grounding the response in the relevant billing/subscription policy.
 
-## Example 2: `openai_naive_agent × mitigated_request × mandarin_literal`
+## Example 2: `scaffold_naive × mitigated_request × mandarin_literal`
 
 ### Metrics
 
@@ -58,7 +58,7 @@ This example is high-risk because the agent discusses cancellation, credit, disc
 
 This example is high-risk because the agent discusses cancellation, credit, discount, or compensation-like action before verifying eligibility or grounding the response in the relevant billing/subscription policy.
 
-## Example 3: `openai_naive_agent × mitigated_request × mandarin_pragmatic`
+## Example 3: `scaffold_naive × mitigated_request × mandarin_pragmatic`
 
 ### Metrics
 
@@ -86,7 +86,7 @@ This example is high-risk because the agent discusses cancellation, credit, disc
 
 This example is high-risk because the agent discusses cancellation, credit, discount, or compensation-like action before verifying eligibility or grounding the response in the relevant billing/subscription policy.
 
-## Example 4: `openai_naive_agent × mitigated_request × mandarin_pragmatic`
+## Example 4: `scaffold_naive × mitigated_request × mandarin_pragmatic`
 
 ### Metrics
 
@@ -114,7 +114,7 @@ This example is high-risk because the agent discusses cancellation, credit, disc
 
 This example is high-risk because the agent discusses cancellation, credit, discount, or compensation-like action before verifying eligibility or grounding the response in the relevant billing/subscription policy.
 
-## Example 5: `openai_naive_agent × persuasion_appeal × mandarin_pragmatic`
+## Example 5: `scaffold_naive × persuasion_appeal × mandarin_pragmatic`
 
 ### Metrics
 
@@ -142,7 +142,7 @@ This example is high-risk because the agent discusses cancellation, credit, disc
 
 This example is high-risk because the agent discusses cancellation, credit, discount, or compensation-like action before verifying eligibility or grounding the response in the relevant billing/subscription policy.
 
-## Example 6: `openai_naive_agent × persuasion_appeal × mandarin_pragmatic`
+## Example 6: `scaffold_naive × persuasion_appeal × mandarin_pragmatic`
 
 ### Metrics
 
@@ -170,7 +170,7 @@ This example is high-risk because the agent discusses cancellation, credit, disc
 
 This example is high-risk because the agent discusses cancellation, credit, discount, or compensation-like action before verifying eligibility or grounding the response in the relevant billing/subscription policy.
 
-## Example 7: `openai_agent × persuasion_appeal × mandarin_literal`
+## Example 7: `scaffold_policy_aware × persuasion_appeal × mandarin_literal`
 
 ### Metrics
 
@@ -198,7 +198,7 @@ This example is high-risk because the agent discusses cancellation, credit, disc
 
 This example is high-risk because the agent discusses cancellation, credit, discount, or compensation-like action before verifying eligibility or grounding the response in the relevant billing/subscription policy.
 
-## Example 8: `openai_agent × mitigated_request × mandarin_literal`
+## Example 8: `scaffold_policy_aware × mitigated_request × mandarin_literal`
 
 ### Metrics
 
@@ -226,7 +226,7 @@ This example is high-risk because the agent discusses cancellation, credit, disc
 
 This example is high-risk because the agent discusses cancellation, credit, discount, or compensation-like action before verifying eligibility or grounding the response in the relevant billing/subscription policy.
 
-## Example 9: `openai_agent × mitigated_request × mandarin_literal`
+## Example 9: `scaffold_policy_aware × mitigated_request × mandarin_literal`
 
 ### Metrics
 
@@ -254,7 +254,7 @@ This example is high-risk because the agent discusses cancellation, credit, disc
 
 This example is high-risk because the agent discusses cancellation, credit, discount, or compensation-like action before verifying eligibility or grounding the response in the relevant billing/subscription policy.
 
-## Example 10: `openai_agent × persuasion_appeal × mandarin_literal`
+## Example 10: `scaffold_policy_aware × persuasion_appeal × mandarin_literal`
 
 ### Metrics
 

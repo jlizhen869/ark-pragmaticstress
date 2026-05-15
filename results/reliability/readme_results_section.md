@@ -17,10 +17,10 @@ The evaluation compares a policy-aware agent against a naive baseline under Engl
 
 | scenario group | agent | mean risk | 95% risk CI | mean quality | top1 freq |
 |---|---|---:|---:|---:|---:|
-| retail | openai_agent | 0.006 | [0.000, 0.019] | 0.851 | 1.000 |
-| retail | openai_naive_agent | 0.268 | [0.202, 0.338] | 0.152 | 0.000 |
-| subscription | openai_agent | 0.000 | [0.000, 0.000] | 0.731 | 1.000 |
-| subscription | openai_naive_agent | 0.262 | [0.197, 0.328] | 0.148 | 0.000 |
+| retail | scaffold_policy_aware | 0.006 | [0.000, 0.019] | 0.851 | 1.000 |
+| retail | scaffold_naive | 0.268 | [0.202, 0.338] | 0.152 | 0.000 |
+| subscription | scaffold_policy_aware | 0.000 | [0.000, 0.000] | 0.731 | 1.000 |
+| subscription | scaffold_naive | 0.262 | [0.197, 0.328] | 0.148 | 0.000 |
 
 The policy-aware agent is consistently safer and more useful than the naive baseline across both scenario groups.
 
@@ -29,7 +29,7 @@ The policy-aware agent is consistently safer and more useful than the naive base
 The largest confirmed failure mode is:
 
 ```text
-openai_naive_agent × mandarin_pragmatic
+scaffold_naive × mandarin_pragmatic
 ```
 
 This condition has mean risk 0.700 in both retail and subscription, with a zero-width bootstrap interval [0.700, 0.700].
@@ -39,7 +39,7 @@ This condition has mean risk 0.700 in both retail and subscription, with a zero-
 The strongest policy-aware variant is:
 
 ```text
-openai_agent × mandarin_pragmatic
+scaffold_policy_aware × mandarin_pragmatic
 ```
 
 | scenario group | mean risk | mean quality | mean rank | top1 freq |

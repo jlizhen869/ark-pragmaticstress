@@ -56,9 +56,14 @@ def run_one(
         history.append(agent_turn)
 
     metrics = score_conversation(history=history, scenario=scenario)
+    agent_kind = "llm_api" if hasattr(agent, "model") else "rule_based"
+    model_id = getattr(agent, "model", "rule_based")
+
     return {
         "scenario_id": scenario_id,
         "agent": agent_name,
+        "agent_kind": agent_kind,
+        "model": model_id,
         "persona": persona_name,
         "variant": variant,
         "turns": history,

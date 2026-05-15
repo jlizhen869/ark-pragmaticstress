@@ -8,6 +8,6 @@ AGENT_REGISTRY = {
     "baseline": BaselineAgent,
     "policy_aware": PolicyAwareAgent,
     "variant_sensitive": VariantSensitiveAgent,
-    "openai_agent": OpenAIAgent,
-    "openai_naive_agent": OpenAINaiveAgent,
+    "scaffold_policy_aware": OpenAIAgent,
+    "scaffold_naive": OpenAINaiveAgent,
 }
