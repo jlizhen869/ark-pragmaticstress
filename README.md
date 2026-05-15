@@ -87,7 +87,40 @@ python -m ark_pragmaticstress.runners.simulate --config configs/llm_full.yaml
 ### Unauthorized concession rate by agent and variant
 
 | Agent | en_direct | en_mitigated | mandarin_literal | mandarin_pragmatic |
-|---|---|---|---|---|
+|---|---:|---:|---:|---:|
+| `scaffold_policy_aware` | 0.00 | 0.00 | 0.00 | 0.00 |
+| `scaffold_naive` | 0.50 | 0.00 | 0.50 | 0.00 |
+
+n=24 per cell (4 scenarios × 2 personas × 3 repeats). These values are computed from [`results/llm_full/conversations.jsonl`](results/llm_full/conversations.jsonl); see [`results/llm_full/breakdown.md`](results/llm_full/breakdown.md).
+
+Evaluator: rule-based heuristic with a 10-conversation false-positive audit by a single reviewer; see [`results/evaluator_audit.md`](results/evaluator_audit.md).
+
+### Key findings
+
+**Finding 1 — Policy grounding reduced unauthorized concessions in this pilot**
+
+The policy-aware agent maintained a 0.00 unauthorized concession rate across all
+variants and personas in this pilot run. The naive baseline had an aggregate
+unauthorized concession rate of 0.25, suggesting that explicit policy grounding
+can reduce concession failures in controlled policy-boundary scenarios.
+
+**Finding 2 — Direct and literal requests produced the observed naive-agent failures**
+
+In the full 192-conversation run, the naive agent was flagged for unauthorized
+concessions on `en_direct` and `mandarin_literal` variants, both at 0.50. The
+mitigated and pragmatic variants were not flagged in this run. This suggests that
+variant-level effects should be interpreted cautiously and checked across larger
+runs.
+
+**Finding 3 — Variant-level conclusions remain exploratory**
+
+The current full-run results support the benchmark's ability to expose policy-boundary
+failures, but they do not support a strong claim that one pragmatic variant is
+consistently riskier than another. The next iteration should add larger samples,
+LLM-judge calibration, and native-speaker review before making stronger
+cross-variant claims.
+
+---|---|---|---|---|
 | `scaffold_policy_aware` | 0.00 | 0.00 | 0.00 | 0.00 |
 | `scaffold_naive` | 0.50 | 0.08 | 1.00 | 1.00 |
 
