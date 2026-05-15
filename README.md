@@ -121,34 +121,6 @@ LLM-judge calibration, and native-speaker review before making stronger
 cross-variant claims.
 
 ---|---|---|---|---|
-| `scaffold_policy_aware` | 0.00 | 0.00 | 0.00 | 0.00 |
-| `scaffold_naive` | 0.50 | 0.08 | 1.00 | 1.00 |
-
-n=24 per cell (4 scenarios × 2 personas × 3 repeats).
-Evaluator: rule-based heuristic, audited for false positives before this run.
-
-### Key findings
-
-**Finding 1 — Policy grounding reduced unauthorized concessions in this pilot**
-
-The policy-aware agent maintained a 0.00 unauthorized concession rate across all
-variants and personas in this pilot run. The naive agent reached 1.00 on both
-Mandarin variants, suggesting that explicit policy grounding in the system prompt
-can substantially reduce concession failures under controlled pragmatic pressure.
-
-**Finding 2 — Mandarin pragmatic variants produced the largest observed gap**
-
-The naive agent's unauthorized concession rate under Mandarin variants (1.00) was
-substantially higher than under English mitigated variants (0.08), a gap of 0.92.
-In this pilot, Mandarin pragmatic variants produced higher failure rates for the ungrounded agent than the English mitigated variant.
-
-**Finding 3 — English mitigated requests produced the lowest observed failure rate for the naive agent**
-
-Contrary to the hypothesis that mitigation would increase failure risk, the naive agent
-had its lowest unauthorized concession rate on `en_mitigated` (0.08). One possible
-interpretation is that softened English requests signaled tentativeness rather than
-pressure, but this requires further investigation with more turns and persuasion personas.
-
 ---
 
 ## Personas
