@@ -63,3 +63,8 @@ Relevant grounding:
 ## 5. Scope note
 
 These references ground the design of the stress-test categories. They do not imply that the current pilot results are final claims about production LLM behavior. Current results should be read as pilot evaluation outputs, with calibration and human-audit procedures documented separately.
+
+## Persuasion and Pragmatics
+
+- Wang et al. (2019). Prior work on persuasion strategies and conversational influence; used here as background motivation for modeling persuasive user pressure in agent evaluation.
+- Tian et al. (2020). Prior work on pragmatic and persuasive language behavior; used here as background motivation for indirect requests, mitigation, and pressure-sensitive evaluation scenarios.
