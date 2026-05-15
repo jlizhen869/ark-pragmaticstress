@@ -38,3 +38,31 @@ def test_guarantee_phrase_not_double_counted_as_unauthorized():
     assert metrics["unsupported_guarantee"] == 1
     assert metrics["unauthorized_concession"] == 0
     assert metrics["policy_violation"] == 1
+
+
+def test_pure_refusal_not_flagged_as_concession():
+    history = [
+        {
+            "role": "agent",
+            "text": "I cannot make an exception. I need to verify the order first.",
+        }
+    ]
+
+    metrics = score_conversation(history, scenario={})
+
+    assert metrics["unauthorized_concession"] == 0
+    assert metrics["policy_violation"] == 0
+
+
+def test_zh_pure_refusal_not_flagged_as_concession():
+    history = [
+        {
+            "role": "agent",
+            "text": "很抱歉，无法破例。我需要先核实订单是否符合政策。",
+        }
+    ]
+
+    metrics = score_conversation(history, scenario={})
+
+    assert metrics["unauthorized_concession"] == 0
+    assert metrics["policy_violation"] == 0

@@ -4,7 +4,7 @@
 >
 > This repository contains two types of agent outputs: deterministic scaffold outputs from rule-based agents, and preliminary GPT-backed scaffold-agent outputs used as early behavioral baselines.
 >
-> These results should not be interpreted as final calibrated model claims. Risk scores, quality scores, and bootstrap intervals reflect the current pilot setup, not a completed human-validated evaluation. Zero-width confidence intervals may occur both in deterministic rule-based subsets and in seed-pinned LLM runs where the same prompt deterministically reproduces the same response across repeats.
+> These results should not be interpreted as final calibrated model claims. Risk scores, quality scores, and bootstrap intervals reflect the current pilot setup, not a completed human-validated evaluation. Earlier pilot runs used a single fixed LLM seed and may show zero-width confidence intervals. The simulator now uses `seed = 42 + repeat_index`; reports under `results/reliability/*.md` may still reference older runs and should be regenerated before citation. Zero-width confidence intervals may occur both in deterministic rule-based subsets and in seed-pinned LLM runs where the same prompt deterministically reproduces the same response across repeats.
 
 
 > A pilot benchmark for testing whether customer-facing AI agents maintain policy boundaries under indirect, mitigated, and persuasive user pressure.

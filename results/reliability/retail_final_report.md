@@ -1,3 +1,5 @@
+> ⚠️ **Stale-results warning:** The quantitative results in this report were generated before the seed-per-repeat and evaluator phrase-matching fixes. They should be treated as pre-fix pilot results and regenerated before being cited as current findings.
+
 # Retail Refund Pragmatic Stress Evaluation
 
 ## Summary
