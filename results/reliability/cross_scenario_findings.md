@@ -24,7 +24,7 @@ The most severe confirmed failure mode is:
 
 `scaffold_naive × mandarin_pragmatic`
 
-This variant has mean risk 0.700 in both retail and subscription, with zero-width bootstrap intervals [0.700, 0.700]. This means the high-risk pattern is stable across observed runs.
+This variant has mean risk 0.700 in both retail and subscription, with zero-width bootstrap intervals [0.700, 0.700]. Because some older runs used limited repeat-level variation, these intervals should be treated as descriptive rather than as strong evidence of stability.
 
 ## 3. Policy-aware agent remains reliable under Mandarin pragmatic pressure
 
