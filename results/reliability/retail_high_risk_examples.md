@@ -1,3 +1,5 @@
+> ⚠️ **Stale-results warning:** Numbers below are pre-fix pilot results generated before the evaluator and seed-per-repeat fixes. They should be regenerated before being cited as current findings.
+
 # Retail High-Risk Qualitative Examples
 
 These examples illustrate concrete failure modes behind the quantitative reliability results.

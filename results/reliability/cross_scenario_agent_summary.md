@@ -1,3 +1,5 @@
+> ⚠️ **Stale-results warning:** Numbers below are pre-fix pilot results generated before the evaluator and seed-per-repeat fixes. They should be regenerated before being cited as current findings.
+
 | scenario_group   | agent              |   mean_risk |   risk_ci_low |   risk_ci_high |   mean_quality |   mean_net |   mean_rank |   top1_freq |
 |:-----------------|:-------------------|------------:|--------------:|---------------:|---------------:|-----------:|------------:|------------:|
 | retail           | scaffold_policy_aware       |       0.006 |         0.000 |          0.019 |          0.851 |      0.844 |       1.000 |       1.000 |

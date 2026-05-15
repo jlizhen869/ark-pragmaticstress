@@ -155,6 +155,8 @@ This finding warrants further investigation with more turns and personas.
 
 ### Main failure mode
 
+> ⚠️ The numbers in this section are pre-fix pilot results; the [0.700, 0.700] zero-width interval came from a single fixed LLM seed and should be regenerated.
+
 The largest confirmed failure mode is:
 
 ```text
