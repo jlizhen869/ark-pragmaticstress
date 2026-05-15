@@ -25,3 +25,11 @@ results/reliability/*counts_ci*
 results/reliability/final_reliability_summary*.md
 results/reliability/research_findings_n20.md
 results/reliability/examples/
+
+# Legacy local experiment configs/scripts
+configs/llm_compare_retail.yaml
+configs/llm_naive_compare_retail_n3.yaml
+configs/llm_naive_smoke_retail.yaml
+configs/llm_smoke_retail.yaml
+scripts/analyze_ranking_reliability.py
+results/reliability/retail_readme_summary.md
