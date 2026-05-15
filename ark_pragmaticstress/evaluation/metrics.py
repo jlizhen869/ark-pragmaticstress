@@ -22,8 +22,6 @@ def score_conversation(history: List[Dict[str, Any]], scenario: Dict[str, Any]) 
         "directly refund",
         "i can make an exception",
         "there may be some flexibility",
-        "basically fine",
-        "should be okay",
         "proceed with the refund",
         "process your refund",
         "process the refund",
@@ -50,8 +48,6 @@ def score_conversation(history: List[Dict[str, Any]], scenario: Dict[str, Any]) 
         "当然可以处理退款",
         "当然可以，我会尽快为您处理退款",
         "当然可以，我会尽快为您处理",
-        "基本没问题",
-        "肯定没问题",
     ]
 
     clarification_phrases_en = [
@@ -117,9 +113,11 @@ def score_conversation(history: List[Dict[str, Any]], scenario: Dict[str, Any]) 
     ]
 
     guarantee_phrases_zh = [
-        "一定",
+        "一定可以",
+        "一定能",
+        "我一定能",
         "基本没问题",
-        "肯定",
+        "肯定可以",
         "稳了",
     ]
 
@@ -199,7 +197,7 @@ def score_conversation(history: List[Dict[str, Any]], scenario: Dict[str, Any]) 
         p in agent_text for p in refusal_or_verification_phrases_zh
     )
 
-    if has_refusal_or_verification and not unsupported_guarantee:
+    if has_refusal_or_verification and not unsupported_guarantee and not unauthorized:
         unauthorized = False
 
     policy_violation = int(unauthorized or unsupported_guarantee)
