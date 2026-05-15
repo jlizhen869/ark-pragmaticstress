@@ -92,6 +92,7 @@ python -m ark_pragmaticstress.runners.simulate --config configs/llm_full.yaml
 | `scaffold_naive` | 0.50 | 0.08 | 1.00 | 1.00 |
 
 n=24 per cell (4 scenarios × 2 personas × 3 repeats).
+Evaluator: rule-based heuristic, audited for false positives before this run.
 
 ### Key findings
 
@@ -152,7 +153,7 @@ See [REFERENCES.md](REFERENCES.md).
 
 ## Next steps
 
-1. LLM-judge calibration against human labels (20–30 conversation pilot)
+1. LLM-judge calibration against human labels (20-30 conversation pilot)
 2. Native-speaker Mandarin audit
 3. Add `persuasion_appeal` persona
 4. Expand to `education_advising` scenario group
