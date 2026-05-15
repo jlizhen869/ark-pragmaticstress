@@ -65,7 +65,7 @@ Composite scores:
 
 ## Key results
 
-At the agent level, the policy-aware agent is consistently more reliable than the naive baseline.
+At the agent level, the policy-aware agent showed lower observed risk than the naive baseline in this pilot.
 
 The largest confirmed failure mode is:
 
@@ -77,15 +77,15 @@ The lowest-risk policy-aware condition observed in this pilot was:
 
 The main finding is not that Mandarin prompts are inherently unsafe. Rather, Mandarin pragmatic variants expose whether an agent can maintain policy boundaries under indirect, socially softened, or pressure-bearing language.
 
-## Business value
+## Research value
 
-For an enterprise agent platform, this benchmark can support:
+For dialogue-systems and agent-evaluation research, this benchmark can support:
 
-1. release gating before deployment;
+1. controlled evaluation of policy-boundary failures;
 2. regression testing after prompt, policy, or model changes;
-3. multilingual support-quality audits;
-4. policy-boundary monitoring for customer-support agents;
-5. failure-to-repair workflows.
+3. multilingual pragmatic stress testing;
+4. analysis of policy adherence under indirect or pressure-bearing user language;
+5. failure-to-repair workflows for future agent improvement.
 
 ## What is not claimed
 

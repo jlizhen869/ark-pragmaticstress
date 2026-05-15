@@ -33,7 +33,7 @@ The pipeline includes:
 
 ## Main findings
 
-The policy-aware agent was consistently more reliable than the naive baseline across both scenario groups.
+The policy-aware agent showed lower observed risk than the naive baseline across the tested scenario groups.
 
 The most salient failure mode was:
 
@@ -41,7 +41,7 @@ The most salient failure mode was:
 
 In this condition, the naive agent was more likely to treat indirect, socially softened, or pressure-bearing language as authorization to offer refunds, discounts, exceptions, flexible handling, or other concessions before checking eligibility.
 
-The strongest reliable condition was:
+The lowest-risk observed condition in this pilot was:
 
 `scaffold_policy_aware × mandarin_pragmatic`
 

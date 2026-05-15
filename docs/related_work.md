@@ -1,6 +1,6 @@
-# Related Work Notes
+# Related Work
 
-Core references to verify and cite:
+Core references used to ground the benchmark design:
 
 - Searle (1975), indirect speech acts.
 - Blum-Kulka, House & Kasper (1989), CCSARP.
