@@ -1,3 +1,8 @@
+"""Naive baseline agent for pilot comparisons.
+
+Intentionally vulnerable to persuasive pressure — gives the benchmark
+a weak reference point so policy-boundary failures are easy to spot.
+"""
 from __future__ import annotations
 
 from typing import Any, Dict, List

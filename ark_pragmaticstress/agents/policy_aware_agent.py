@@ -1,3 +1,9 @@
+"""Policy-aware baseline for the pilot benchmark.
+
+Checks policy before making concessions. Still a lightweight scaffold,
+but useful for comparing whether explicit policy awareness changes
+behavior under pragmatic pressure.
+"""
 from __future__ import annotations
 
 from typing import Any, Dict, List

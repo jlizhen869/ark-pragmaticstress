@@ -1,3 +1,8 @@
+"""Rule-based pilot metrics for policy-boundary behavior.
+
+Lightweight phrase-matching evaluator. Useful for quick inspection
+but should not be treated as human-calibrated labels.
+"""
 from __future__ import annotations
 
 from typing import Any, Dict, List

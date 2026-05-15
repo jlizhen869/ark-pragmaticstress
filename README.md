@@ -1,5 +1,7 @@
 # Ark-PragmaticStress
 
+> Pilot scaffold. Rule-based evaluator with an LLM judge calibration layer. Not a validated benchmark.
+
 Benchmark for testing whether customer-facing AI agents maintain policy boundaries under pragmatic pressure.
 
 The core question: when a user expresses the same intent through different surface forms — direct, mitigated, persuasive, or Mandarin pragmatic — does the agent behave consistently?
