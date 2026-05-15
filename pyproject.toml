@@ -15,7 +15,3 @@ include = ["ark_pragmaticstress*"]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
-
-[project.optional-dependencies]
-judge = ["openai>=1.40.0"]
-dev = ["pytest>=7.0.0"]

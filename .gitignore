@@ -41,3 +41,4 @@ make_claude_repo_dump.py
 # Local repo dump files
 CLAUDE_REPO_DUMP_CURRENT.md
 make_claude_repo_dump_current.py
+*.egg-info/

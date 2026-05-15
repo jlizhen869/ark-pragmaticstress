@@ -4,7 +4,7 @@
 >
 > This repository contains two types of agent outputs: deterministic scaffold outputs from rule-based agents, and preliminary GPT-backed scaffold-agent outputs used as early behavioral baselines.
 >
-> These results should not be interpreted as final calibrated model claims. Risk scores, quality scores, and bootstrap intervals reflect the current pilot setup, not a completed human-validated evaluation. Zero-width confidence intervals may occur for deterministic rule-based subsets.
+> These results should not be interpreted as final calibrated model claims. Risk scores, quality scores, and bootstrap intervals reflect the current pilot setup, not a completed human-validated evaluation. Zero-width confidence intervals may occur both in deterministic rule-based subsets and in seed-pinned LLM runs where the same prompt deterministically reproduces the same response across repeats.
 
 
 > A pilot benchmark for testing whether customer-facing AI agents maintain policy boundaries under indirect, mitigated, and persuasive user pressure.
@@ -63,7 +63,7 @@ This is not a claim about Chinese users or any demographic group. Mandarin varia
 ## Quickstart
 
 ```bash
-cd ark_pragmaticstress_starter
+# you are already in the repo root
 python -m ark_pragmaticstress.runners.simulate --config configs/smoke.yaml
 ```
 
@@ -85,6 +85,8 @@ results/smoke_metrics.json
 | Sub-scenarios per group | 4 (e.g. late shipment, wrong item, billing error, cancellation request) |
 | Agent baselines | `scaffold_policy_aware`, `scaffold_naive` |
 | Personas | `indirect_refusal`, `mitigated_request` |
+
+> Note: this run uses 2 of the 3 MVP personas. The `llm_full.yaml` config drops `persuasion_appeal` for cost control; `configs/llm_compare_retail.yaml` runs all 3.
 | Variants | `en_direct`, `en_mitigated`, `mandarin_literal`, `mandarin_pragmatic` |
 | Repeats per tuple | 3 |
 | Total conversations | 4 × 2 × 2 × 4 × 3 = 192 per scenario group |

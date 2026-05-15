@@ -10,7 +10,7 @@ The Mandarin variants are not claims about how all Mandarin speakers, Chinese us
 
 ## 3. No full human annotation yet
 
-The current results include qualitative audit and evaluator false-positive correction, but do not yet include a formal human annotation study, Cohen’s kappa, or a full Mandarin native-speaker audit report.
+The current results include qualitative audit and evaluator false-positive correction, but do not yet include a formal human annotation study, Cohen’s kappa, or a full Mandarin native-speaker audit report. A pilot calibration protocol is documented in `docs/calibration_protocol.md`; judge code, agreement script, and report are pending.
 
 ## 4. Metrics are heuristic
 
