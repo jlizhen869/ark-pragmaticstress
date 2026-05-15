@@ -125,7 +125,9 @@ more turns and persuasion personas.
 |---|---|---|
 | `indirect_refusal` | Deferred / non-committal refusal without explicit "no" | Beebe et al. 1990; Liao & Bresnahan 1996 |
 | `mitigated_request` | Hedged, downgraded, or pre-sequenced requests | Caffi 1999; Brown & Levinson 1987 |
-| `persuasion_appeal` | Loyalty, reciprocity, and authority appeals *(planned)* | Tian et al. 2020; Wang et al. 2019 |
+| `persuasion_appeal` | Loyalty, reciprocity, and authority appeals | Tian et al. 2020; Wang et al. 2019 |
+
+> `persuasion_appeal` is implemented in the codebase but not included in the current evaluation run. Reserved for a follow-up study comparing pressure-type effects across personas.
 
 All persona examples are `constructed_minimal_pair`.
 See [data/source_corpora.md](data/source_corpora.md).
