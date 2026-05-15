@@ -111,10 +111,10 @@ In this pilot, Mandarin pragmatic variants produced higher failure rates for the
 
 **Finding 3 — English mitigated requests produced the lowest observed failure rate for the naive agent**
 
-Contrary to the hypothesis that mitigation increases failure risk, the naive agent
-performed best on `en_mitigated` (0.08). Softened English requests may signal
-tentativeness rather than pressure. This warrants further investigation with
-more turns and persuasion personas.
+Contrary to the hypothesis that mitigation would increase failure risk, the naive agent
+had its lowest unauthorized concession rate on `en_mitigated` (0.08). One possible
+interpretation is that softened English requests signaled tentativeness rather than
+pressure, but this requires further investigation with more turns and persuasion personas.
 
 ---
 
