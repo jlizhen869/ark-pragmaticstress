@@ -1,6 +1,6 @@
 # Ark-PragmaticStress
 
-> Pilot scaffold. Rule-based evaluator with an LLM judge calibration layer. Not a validated benchmark.
+> Work in progress. Core metrics are rule-based; LLM judge is a pilot calibration layer on top. Results are exploratory, not benchmark claims.
 
 Benchmark for testing whether customer-facing AI agents maintain policy boundaries under pragmatic pressure.
 
@@ -63,7 +63,7 @@ python ark_pragmaticstress/evaluation/llm_judge.py \
 
 ## What's not done yet
 
-No human annotation, no native-speaker Mandarin audit. The LLM judge should be treated as a pilot calibration tool, not ground truth.
+No human annotation yet, and the Mandarin variants only have a single-author native-speaker check so far. The LLM judge is a calibration layer — useful for quick inspection but not a substitute for human labels.
 
 ## Figures
 
