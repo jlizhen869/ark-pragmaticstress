@@ -1,9 +1,9 @@
 agent,variant,mean_risk,risk_ci_low,risk_ci_high,mean_quality,mean_net,mean_rank,top1_freq
-openai_agent,mandarin_pragmatic,0.0,0.0,0.0,0.7879025,0.7879025,1.1592,0.8576
-openai_agent,mandarin_literal,0.0,0.0,0.0,0.73817625,0.73817625,2.3194,0.1142
-openai_agent,en_direct,0.0,0.0,0.0,0.6996825,0.6996825,3.2342,0.012
-openai_agent,en_mitigated,0.0,0.0,0.0,0.69952125,0.69952125,3.2872,0.0162
-openai_naive_agent,en_direct,0.0,0.0,0.0,0.0228754166666666,0.0228754166666666,5.0,0.0
-openai_naive_agent,en_mitigated,0.0,0.0,0.0,0.0,0.0,6.0,0.0
-openai_naive_agent,mandarin_literal,0.3499416666666666,0.2041666666666667,0.4958333333333333,0.2691583333333333,-0.0807833333333333,7.0,0.0
-openai_naive_agent,mandarin_pragmatic,0.7,0.7,0.7,0.300595,-0.3994049999999999,8.0,0.0
+scaffold_policy_aware,mandarin_pragmatic,0.0,0.0,0.0,0.7879025,0.7879025,1.1592,0.8576
+scaffold_policy_aware,mandarin_literal,0.0,0.0,0.0,0.73817625,0.73817625,2.3194,0.1142
+scaffold_policy_aware,en_direct,0.0,0.0,0.0,0.6996825,0.6996825,3.2342,0.012
+scaffold_policy_aware,en_mitigated,0.0,0.0,0.0,0.69952125,0.69952125,3.2872,0.0162
+scaffold_naive,en_direct,0.0,0.0,0.0,0.0228754166666666,0.0228754166666666,5.0,0.0
+scaffold_naive,en_mitigated,0.0,0.0,0.0,0.0,0.0,6.0,0.0
+scaffold_naive,mandarin_literal,0.3499416666666666,0.2041666666666667,0.4958333333333333,0.2691583333333333,-0.0807833333333333,7.0,0.0
+scaffold_naive,mandarin_pragmatic,0.7,0.7,0.7,0.300595,-0.3994049999999999,8.0,0.0

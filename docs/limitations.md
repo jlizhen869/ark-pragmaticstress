@@ -22,7 +22,7 @@ The current implementation covers retail refund/exception handling and subscript
 
 ## 6. Agent baselines are limited
 
-The benchmark currently compares a naive OpenAI-based agent and a policy-aware OpenAI-based agent. It does not yet compare multiple agent frameworks such as LangGraph, CrewAI, AutoGen, or production Arklex agents.
+The benchmark currently compares a naive scaffold LLM agent and a policy-aware scaffold LLM agent. It does not yet compare multiple agent frameworks such as LangGraph, CrewAI, AutoGen, or production Arklex agents.
 
 ## 7. Results should be interpreted as diagnostic
 

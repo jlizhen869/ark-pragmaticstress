@@ -24,7 +24,7 @@ The pipeline includes:
 
 - YAML-defined scenario policies for retail refund and subscription/billing settings;
 - matched pragmatic variants: `en_direct`, `en_mitigated`, `mandarin_literal`, and `mandarin_pragmatic`;
-- two OpenAI-based agent baselines: a naive agent and a policy-aware agent;
+- two scaffold LLM agent baselines: a naive agent and a policy-aware agent;
 - simulated conversations across agents, personas, variants, and repeated runs;
 - conversation-level metrics for policy violations, unauthorized concessions, unsupported guarantees, clarification-before-action, policy grounding, and helpfulness-boundary tradeoff;
 - bootstrap reliability ranking with confidence intervals;
@@ -65,7 +65,7 @@ Completed:
 
 - retail refund / exception-handling scenario group;
 - subscription cancellation / billing-adjustment scenario group;
-- naive and policy-aware OpenAI-based agents;
+- naive and policy-aware scaffold LLM agents;
 - four matched pragmatic variants;
 - risk, quality, and net reliability scoring;
 - bootstrap reliability ranking;

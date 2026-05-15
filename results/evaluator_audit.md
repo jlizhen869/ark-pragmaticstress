@@ -1,5 +1,8 @@
 # Evaluator Audit — False Positive Analysis
 
+
+**Status:** Pilot audit. This document records initial evaluator failure modes from one review pass. It is not a full human-evaluation study. A full audit should include 5–10 false-positive / false-negative patterns, multiple reviewers, and agreement statistics.
+
 ## Purpose
 This document records the manual audit of the rule-based evaluator, focusing on false positives in the `unauthorized_concession` label.
 

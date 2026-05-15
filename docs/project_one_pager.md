@@ -101,7 +101,7 @@ Completed:
 
 - retail scenario group;
 - subscription/billing scenario group;
-- two OpenAI-based agent baselines;
+- two scaffold LLM agent baselines;
 - risk/quality/net reliability scoring;
 - bootstrap ranking;
 - qualitative failure examples;

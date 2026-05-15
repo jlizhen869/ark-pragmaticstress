@@ -33,3 +33,7 @@ configs/llm_naive_smoke_retail.yaml
 configs/llm_smoke_retail.yaml
 scripts/analyze_ranking_reliability.py
 results/reliability/retail_readme_summary.md
+
+# Local repo dump files
+CLAUDE_REPO_DUMP.md
+make_claude_repo_dump.py
