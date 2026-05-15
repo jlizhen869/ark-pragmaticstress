@@ -47,3 +47,4 @@ make_claude_repo_dump_current.py
 claude_full_dump*.md
 __pycache__/
 *.pyc
+*.egg-info/
