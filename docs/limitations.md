@@ -2,34 +2,30 @@
 
 ## 1. Simulated conversations, not real users
 
-The current benchmark uses synthetic users and simulated conversations. The results measure agent behavior under controlled test stimuli, not real-world customer behavior.
+The current benchmark uses synthetic users and simulated conversations. Results measure agent behavior under controlled test stimuli, not real-world customer behavior.
 
 ## 2. Mandarin variants are controlled stimuli
 
-The Mandarin variants are not claims about how all Mandarin speakers, Chinese users, or any demographic group communicates. They are controlled pragmatic surface forms designed to test whether an agent preserves policy boundaries when the same underlying intent is expressed differently.
+The Mandarin variants are not claims about how Mandarin speakers or Chinese users communicate. They are controlled pragmatic surface forms designed to test whether an agent preserves policy boundaries when the same underlying intent is expressed differently.
 
 ## 3. No full human annotation yet
 
-The current results include qualitative audit and evaluator false-positive correction, but do not yet include a formal human annotation study, Cohen’s kappa, or a full Mandarin native-speaker audit report. A pilot calibration protocol is documented in `docs/calibration_protocol.md`; judge code, agreement script, and report are pending.
+Current results include qualitative audit and evaluator false-positive correction, but no formal human annotation study, Cohen's kappa, or native-speaker Mandarin audit. A calibration protocol is in `docs/calibration_protocol.md`.
 
 ## 4. Metrics are heuristic
 
-The evaluator is rule-based and heuristic. It was improved after false-positive analysis, but it should still be treated as a diagnostic tool rather than a definitive judge of policy compliance.
+The evaluator is rule-based. It was improved after false-positive analysis but should be treated as a diagnostic tool, not a definitive judge of policy compliance.
 
 ## 5. Scenario coverage is limited
 
-The current implementation covers retail refund/exception handling and subscription/billing adjustment. Other domains, such as education/advisory or healthcare-like support, would require new policies, rubrics, and stronger safety review.
+Currently covers retail refund and subscription/billing. Other domains would require new policies, rubrics, and safety review.
 
 ## 6. Agent baselines are limited
 
-The benchmark currently compares a naive scaffold LLM agent and a policy-aware scaffold LLM agent. It does not yet compare multiple agent frameworks such as LangGraph, CrewAI, AutoGen, or production Arklex agents.
+Currently compares two rule-based baselines. Does not yet compare LangGraph, CrewAI, AutoGen, or production Arklex agents.
 
 ## 7. Results should be interpreted as diagnostic
 
-The benchmark is best understood as a stress-test and release-gating tool. It identifies policy-boundary vulnerabilities and regression risks; it does not claim to fully certify an agent for production deployment.
+The benchmark identifies policy-boundary vulnerabilities and regression risks. It does not certify an agent for production deployment.
 
-## Deterministic repeats and effective sample size
-
-Earlier pilot runs used a single seed across repeats, producing identical outputs and zero-width bootstrap intervals. Subsequent runs, including the headline 192-conversation evaluation, use `seed = 42 + repeat_index` for both personas and LLM-backed agents, which produces distinct outputs across repeats.
-
-Older reliability reports under `results/reliability/` predate this fix and are marked accordingly. Even with repeat-level seeds, repeats should be interpreted as controlled execution replicates rather than fully independent observations. Future runs should report effective sample size conservatively and document repeat-level random state.
+Earlier pilot runs used a single seed across repeats, producing identical outputs and zero-width bootstrap intervals. This was fixed by using `seed = 42 + repeat_index`. Older reliability reports under `results/reliability/` predate this fix. Even with per-repeat seeds, repeats should be treated as controlled replicates rather than independent observations.
