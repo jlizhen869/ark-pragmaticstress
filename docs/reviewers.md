@@ -1,27 +1,13 @@
 # Reviewer Notes
 
-## Current test status
+## Mandarin pragmatic variant review
 
-The project installs successfully in editable development mode and the test suite passes.
+Reviewed by Lizhen Jiang (L1 Mandarin speaker, grew up in mainland China).
 
-Command run locally:
+Checked the two `mandarin_pragmatic` examples in `docs/minimal_pair_examples.md` — 
+the retail refund one and the subscription cancellation one. Both read naturally in 
+a customer service context, nothing feels like a translation artifact or a caricature 
+of how people actually talk.
 
-~~~bash
-pip install -e ".[dev]" && pytest -q
-~~~
-
-Result:
-
-~~~text
-Successfully installed ark-pragmaticstress-0.1.0
-......                                                                   [100%]
-6 passed in 0.02s
-~~~
-
-## Notes on result files
-
-The current README reports the headline 192-conversation LLM evaluation.
-
-Older exploratory reliability files under `results/reliability/` are retained for transparency and are marked as stale pilot artifacts. They should not be cited as the current headline results.
-
-For the current headline numbers, use the README results table and the final LLM evaluation outputs under `results/llm_full/`.
+This is just one person's read. Ideally a second native speaker would spot-check the 
+generated conversation outputs too, not just the seed examples.
