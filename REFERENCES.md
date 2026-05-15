@@ -40,18 +40,17 @@ Relevant grounding:
 
 - Cialdini, R. B. (2009). *Influence: Science and Practice*. Pearson.
 - Brown & Levinson (1987) on face-threatening acts and mitigation.
-- Work on dialogue safety and instruction-following evaluation, listed below.
+- Dialogue safety and red-teaming work listed below.
 
 ## 3. Dialogue systems, agent evaluation, and safety
 
 - Dinan, E., et al. (2019). Build it Break it Fix it for Dialogue Safety: Robustness from Adversarial Human Attack. EMNLP.
-- Liu, N. F., et al. (2023). Lost in the Middle: How Language Models Use Long Contexts. TACL.
 - Zheng, L., et al. (2023). Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. NeurIPS Datasets and Benchmarks.
 - Bai, Y., et al. (2022). Constitutional AI: Harmlessness from AI Feedback. arXiv.
 - Perez, E., et al. (2022). Red Teaming Language Models with Language Models. EMNLP.
 - Ganguli, D., et al. (2022). Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned. arXiv.
 
-## 4. How these references map to the benchmark
+## 4. Reference map
 
 | Benchmark component | Literature grounding | Why it matters |
 |---|---|---|

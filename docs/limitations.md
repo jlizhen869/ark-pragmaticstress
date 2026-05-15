@@ -27,3 +27,7 @@ The benchmark currently compares a naive scaffold LLM agent and a policy-aware s
 ## 7. Results should be interpreted as diagnostic
 
 The benchmark is best understood as a stress-test and release-gating tool. It identifies policy-boundary vulnerabilities and regression risks; it does not claim to fully certify an agent for production deployment.
+
+## Deterministic repeats and effective sample size
+
+Current pilot runs use deterministic persona templates, fixed LLM seeds, and rule-based scoring. As a result, repeated runs for the same `(scenario, agent, persona, variant)` cell may produce identical outputs. Repeats should therefore be interpreted as execution replicates rather than fully independent observations. Bootstrap intervals over deterministic repeats can be zero-width and should not be interpreted as evidence of model stability. Future runs should either remove the repeat dimension from effective-N claims or introduce controlled repeat-level variation through seed changes and documented random state.
