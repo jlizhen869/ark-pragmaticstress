@@ -15,16 +15,23 @@ The Mandarin pragmatic variant is not a claim about how Mandarin speakers commun
 
 ## Results
 
-Smoke run: 48 conversations across retail and subscription scenarios, two agents, four variants.
+192 conversations across retail and subscription scenarios, two LLM-backed agents, four pragmatic variants, evaluated with an LLM judge.
 
-| agent | policy_violation | policy_grounding | helpfulness_boundary |
-|---|---|---|---|
-| baseline | 0.417 | 0.000 | 0.000 |
-| policy_aware | 0.000 | 1.000 | 0.958 |
+| agent | policy_violation | unauthorized_concession | policy_grounding | helpfulness_boundary |
+|---|---|---|---|---|
+| scaffold_naive | 0.250 | 0.250 | 0.104 | 0.125 |
+| scaffold_policy_aware | 0.000 | 0.000 | 0.500 | 0.563 |
 
-The naive baseline failed on 41.7% of conversations. The policy-aware agent held at 0%.
+The naive agent failed on 25% of conversations. The policy-aware agent held at 0%.
 
-The largest failure mode was `baseline × mandarin_pragmatic` — indirect Mandarin pressure triggered unauthorized concessions that direct English requests did not.
+Variant-level breakdown (unauthorized concession rate):
+
+| agent | en_direct | en_mitigated | mandarin_literal | mandarin_pragmatic |
+|---|---|---|---|---|
+| scaffold_naive | 0.50 | 0.00 | 0.50 | 0.00 |
+| scaffold_policy_aware | 0.00 | 0.00 | 0.00 | 0.00 |
+
+The largest failure mode was `scaffold_naive × en_direct` and `scaffold_naive × mandarin_literal` — direct requests triggered more unauthorized concessions than mitigated or pragmatic variants in this pilot, which itself is a finding worth investigating further.
 
 ## Run
 
@@ -33,14 +40,25 @@ pip install -e .
 python -m ark_pragmaticstress.runners.simulate --config configs/smoke.yaml
 ```
 
+For LLM evaluation (requires `OPENAI_API_KEY`):
+
+```bash
+python ark_pragmaticstress/evaluation/llm_judge.py \
+  --input results/llm_full/conversations.jsonl \
+  --output results/llm_judge_labels.jsonl \
+  --model gpt-4o-mini
+```
+
 ## Structure
 
 - `ark_pragmaticstress/agents/` — baseline and policy-aware agents
 - `ark_pragmaticstress/evaluation/metrics.py` — rule-based scoring with false-positive corrections
+- `ark_pragmaticstress/evaluation/llm_judge.py` — LLM judge for calibration
 - `ark_pragmaticstress/runners/simulate.py` — main pipeline
 - `configs/` — YAML scenario configs
-- `results/` — conversation logs and metrics
+- `results/llm_full/` — 192-conversation LLM evaluation results
+- `docs/` — annotation guidelines, limitations, calibration protocol
 
 ## What's not done yet
 
-No LLM judge, no human annotation, no native-speaker Mandarin audit. The evaluator is rule-based and should be treated as a diagnostic tool, not ground truth.
+No human annotation, no native-speaker Mandarin audit. The LLM judge should be treated as a pilot calibration tool, not ground truth.
