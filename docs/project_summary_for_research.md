@@ -93,4 +93,4 @@ The next technical extension is a controlled failure-to-repair loop. Confirmed h
 
 ## Safe project claim
 
-Ark-PragmaticStress demonstrates a controlled diagnostic benchmark for measuring whether customer-facing agents preserve policy boundaries under pragmatic and multilingual pressure. Across two commercial support scenario groups, the policy-aware agent sharply reduced risk compared with a naive baseline, while Mandarin pragmatic variants consistently exposed unauthorized-concession failures in the naive agent.
+Ark-PragmaticStress demonstrates a controlled diagnostic benchmark for measuring whether customer-facing agents preserve policy boundaries under pragmatic and multilingual pressure. Across two commercial support scenario groups, the policy-aware agent lowered the observed risk in this pilot compared with a naive baseline, while Mandarin pragmatic variants produced higher observed unauthorized-concession failure rates in the naive agent.

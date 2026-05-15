@@ -97,7 +97,7 @@ Evaluator: rule-based heuristic with a 10-conversation false-positive audit by a
 
 ### Key findings
 
-**Finding 1 — Policy grounding reduced unauthorized concessions in this pilot**
+**Pilot observation 1 — Policy grounding reduced unauthorized concessions in this pilot**
 
 The policy-aware agent maintained a 0.00 unauthorized concession rate across all
 variants and personas in this pilot run. The naive baseline had an aggregate

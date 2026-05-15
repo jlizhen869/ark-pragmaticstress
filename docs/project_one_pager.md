@@ -119,5 +119,5 @@ Not yet completed:
 
 ## Safe project claim
 
-Ark-PragmaticStress demonstrates a controlled diagnostic benchmark for measuring whether customer-facing agents preserve policy boundaries under pragmatic and multilingual pressure. Across simulated conversations, the policy-aware agent sharply reduced risk compared with a naive baseline, while Mandarin pragmatic variants consistently exposed unauthorized-concession failures in the scaffold_naive baseline.
+Ark-PragmaticStress demonstrates a controlled diagnostic benchmark for measuring whether customer-facing agents preserve policy boundaries under pragmatic and multilingual pressure. Across simulated conversations, the policy-aware agent lowered the observed risk in this pilot compared with a naive baseline, while Mandarin pragmatic variants produced higher observed unauthorized-concession failure rates in the scaffold_naive baseline.
 

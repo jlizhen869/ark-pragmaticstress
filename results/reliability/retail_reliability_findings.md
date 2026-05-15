@@ -39,7 +39,7 @@ For `scaffold_naive`:
 
 The `mandarin_pragmatic` condition is especially severe: every run in this condition produced the same high-risk pattern, giving a zero-width bootstrap interval at 0.700.
 
-This indicates that pragmatic Mandarin pressure is not merely a surface translation change. It can create a qualitatively stronger failure mode for a weak or non-policy-grounded agent.
+This indicates that pragmatic Mandarin pressure is not merely a surface translation change. It is associated with higher observed risk in this configuration for a weak or non-policy-grounded agent.
 
 ## 4. Mitigation effect
 

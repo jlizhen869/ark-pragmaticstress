@@ -66,5 +66,5 @@ These references ground the design of the stress-test categories. They do not im
 
 ## Persuasion and Pragmatics
 
-- Wang et al. (2019). Prior work on persuasion strategies and conversational influence; used here as background motivation for modeling persuasive user pressure in agent evaluation.
-- Tian et al. (2020). Prior work on pragmatic and persuasive language behavior; used here as background motivation for indirect requests, mitigation, and pressure-sensitive evaluation scenarios.
+- Wang, X., Shi, W., Kim, R., Oh, Y., Yang, S., Zhang, J., & Yu, Z. (2019). Persuasion for good: Towards a personalized persuasive dialogue system. Proceedings of ACL 2019. Used here to motivate the `persuasion_appeal` persona's loyalty, authority, and reciprocity pressure devices. used here as background motivation for modeling persuasive user pressure in agent evaluation.
+- Tian, Y., Shi, W., Li, C., & Yu, Z. (2020). Understanding user resistance strategies in persuasive conversations. Findings of EMNLP 2020. Used here to motivate indirect requests, mitigation, and resistance-style pragmatic pressure in dialogue. used here as background motivation for indirect requests, mitigation, and pressure-sensitive evaluation scenarios.

@@ -1,7 +1,5 @@
 # Related Work Notes
 
-This file should be filled before public release.
-
 Core references to verify and cite:
 
 - Searle (1975), indirect speech acts.
