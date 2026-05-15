@@ -148,6 +148,7 @@ See [REFERENCES.md](REFERENCES.md).
 - [Limitations](docs/limitations.md)
 - [Project one-pager](docs/project_one_pager.md)
 - [Reviewer notes](docs/reviewers.md)
+- [Calibration report](results/calibration_report.md)
 
 ---
 
