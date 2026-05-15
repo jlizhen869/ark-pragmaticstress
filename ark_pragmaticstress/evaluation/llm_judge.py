@@ -68,7 +68,7 @@ def format_record(record: dict[str, Any]) -> str:
         parts.append("conversation:")
         for turn in record["turns"]:
             role = turn.get("role", "unknown")
-            content = turn.get("content", "")
+            content = turn.get("text", turn.get("content", ""))
             parts.append(f"{role}: {content}")
     else:
         parts.append(json.dumps(record, ensure_ascii=False, indent=2))
