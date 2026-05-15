@@ -6,18 +6,22 @@ The project installs successfully in editable development mode and the test suit
 
 Command run locally:
 
-```bash
+~~~bash
 pip install -e ".[dev]" && pytest -q
-```
+~~~
 
 Result:
 
-```text
+~~~text
 Successfully installed ark-pragmaticstress-0.1.0
 ......                                                                   [100%]
 6 passed in 0.02s
-```
+~~~
 
-## Notes on reported results
+## Notes on result files
 
-Quantitative result files under `results/reliability/` are retained as pre-fix pilot artifacts. They are explicitly marked with stale-results warnings and should be regenerated before being cited as current findings.
+The current README reports the final 192-conversation LLM evaluation.
+
+Older exploratory reliability files under `results/reliability/` are retained for transparency and are marked as stale pilot artifacts. They should not be cited as the current headline results.
+
+For the current headline numbers, use the README results table and the final LLM evaluation outputs under `results/llm_full/`.
