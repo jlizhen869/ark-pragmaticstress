@@ -9,3 +9,19 @@ venv/
 .ipynb_checkpoints/
 README.md.bak
 *.bak
+
+# Generated experiment outputs
+results/*.jsonl
+results/*_metrics.json
+results/*_breakdown.csv
+results/*_breakdown.md
+results/*_policy_violation_gaps.md
+results/llm_compare_findings.md
+
+# Intermediate reliability outputs
+results/reliability/*raw*
+results/reliability/*bootstrap_ranking*
+results/reliability/*counts_ci*
+results/reliability/final_reliability_summary*.md
+results/reliability/research_findings_n20.md
+results/reliability/examples/
