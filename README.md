@@ -88,6 +88,13 @@ The evaluation compares a policy-aware agent against a naive baseline under Engl
 
 The policy-aware agent is consistently safer and more useful than the naive baseline across both scenario groups.
 
+## Documentation
+
+- [Project one-pager](docs/project_one_pager.md)
+- [Limitations](docs/limitations.md)
+- [Reviewer documentation placeholder](docs/reviewers.md)
+- [Annotation guidelines](docs/annotation_guidelines.md)
+
 ### Main failure mode
 
 The largest confirmed failure mode is:
