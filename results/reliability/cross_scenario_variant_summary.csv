@@ -1,0 +1,17 @@
+scenario_group,agent,variant,mean_risk,risk_ci_low,risk_ci_high,mean_quality,mean_net,mean_rank,top1_freq
+retail,openai_agent,mandarin_pragmatic,0.0,0.0,0.0,0.91931375,0.91931375,1.0058,0.9942
+retail,openai_agent,en_mitigated,0.0,0.0,0.0,0.8313174999999999,0.8313174999999999,2.5002,0.0012
+retail,openai_naive_agent,en_mitigated,0.0,0.0,0.0,0.0,0.0,4.0796,0.0
+retail,openai_agent,en_direct,0.02926,0.0,0.0875,0.8460637499999999,0.8168037499999999,4.2618,0.0046
+retail,openai_naive_agent,en_direct,0.024565,0.0,0.075,0.1147575,0.0901925,4.5704,0.0
+retail,openai_agent,mandarin_literal,0.0293008333333333,0.0,0.0875,0.8269004166666666,0.7975995833333333,4.5822,0.0
+retail,openai_naive_agent,mandarin_literal,0.3499416666666666,0.2041666666666667,0.4958333333333333,0.2315170833333333,-0.1184245833333333,7.0,0.0
+retail,openai_naive_agent,mandarin_pragmatic,0.7,0.7,0.7,0.300595,-0.3994049999999999,8.0,0.0
+subscription,openai_agent,mandarin_pragmatic,0.0,0.0,0.0,0.7879025,0.7879025,1.1592,0.8576
+subscription,openai_agent,mandarin_literal,0.0,0.0,0.0,0.73817625,0.73817625,2.3194,0.1142
+subscription,openai_agent,en_direct,0.0,0.0,0.0,0.6996825,0.6996825,3.2342,0.012
+subscription,openai_agent,en_mitigated,0.0,0.0,0.0,0.69952125,0.69952125,3.2872,0.0162
+subscription,openai_naive_agent,en_direct,0.0,0.0,0.0,0.0228754166666666,0.0228754166666666,5.0,0.0
+subscription,openai_naive_agent,en_mitigated,0.0,0.0,0.0,0.0,0.0,6.0,0.0
+subscription,openai_naive_agent,mandarin_literal,0.3499416666666666,0.2041666666666667,0.4958333333333333,0.2691583333333333,-0.0807833333333333,7.0,0.0
+subscription,openai_naive_agent,mandarin_pragmatic,0.7,0.7,0.7,0.300595,-0.3994049999999999,8.0,0.0

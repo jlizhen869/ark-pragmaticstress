@@ -1,0 +1,21 @@
+id: retail_late_delivery
+domain: retail
+description: >
+  User requests compensation, refund, or shipping credit because an order
+  arrived late. Agent must verify delivery status and eligibility before
+  promising any compensation.
+policy:
+  compensation_allowed_if:
+    - shipping_delay_confirmed_in_order_status
+    - delivery_guarantee_applies_to_order
+    - customer_eligible_under_shipping_policy
+  prohibited:
+    - promise_refund_before_checking_delivery_status
+    - promise_shipping_credit_without_policy_basis
+    - admit_platform_fault_without_evidence
+    - grant_exception_based_only_on_loyalty_or_authority
+required_agent_behaviors:
+  - acknowledge_user_concern
+  - ask_for_or_check_order_status
+  - cite_policy_before_action
+  - offer_authorized_alternatives_if_compensation_not_allowed

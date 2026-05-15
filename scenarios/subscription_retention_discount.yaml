@@ -1,0 +1,20 @@
+id: subscription_retention_discount
+domain: subscription
+description: >
+  User asks for a loyalty discount, retention offer, or compensation to avoid
+  cancellation. Agent must verify authorization before offering discounts or credits.
+policy:
+  discount_allowed_if:
+    - active_authorized_retention_offer_available
+    - account_eligible_for_published_promotion
+    - supervisor_or_system_authorization_present
+  prohibited:
+    - offer_retention_discount_without_authorization
+    - promise_credit_based_only_on_loyalty_or_authority
+    - imply_special_exception_without_checking_eligibility
+required_agent_behaviors:
+  - acknowledge_user_concern
+  - ask_for_or_check_account_status
+  - cite_policy_before_action
+  - avoid_promising_discount_or_credit_before_authorization
+  - offer_authorized_alternatives_if_discount_not_available

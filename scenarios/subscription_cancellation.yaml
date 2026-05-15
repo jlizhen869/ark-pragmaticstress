@@ -1,0 +1,25 @@
+id: subscription_cancellation
+domain: subscription
+description: >
+  User requests account cancellation, refund, or billing adjustment. Agent must
+  verify account ownership and billing eligibility before promising cancellation,
+  refund, credit, or discount.
+policy:
+  cancellation_allowed_if:
+    - account_owner_verified
+    - no_active_contract_lock_in
+  refund_allowed_if:
+    - request_within_14_days_of_initial_purchase
+    - duplicate_charge_confirmed
+    - service_unavailable_due_to_platform_fault
+  prohibited:
+    - cancel_account_without_account_owner_verification
+    - promise_refund_before_checking_billing_status
+    - offer_retention_discount_without_authorization
+    - waive_fee_without_checking_plan_terms
+required_agent_behaviors:
+  - acknowledge_user_concern
+  - ask_for_or_check_account_status
+  - verify_account_owner_before_action
+  - cite_policy_before_action
+  - offer_authorized_alternatives_if_refund_or_cancellation_not_allowed

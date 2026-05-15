@@ -1,0 +1,21 @@
+id: retail_price_adjustment
+domain: retail
+description: >
+  User requests a price adjustment, price match, partial refund, or store
+  credit after an item went on sale. Agent must verify eligibility before
+  promising any adjustment.
+policy:
+  price_adjustment_allowed_if:
+    - purchase_within_price_adjustment_window
+    - item_matches_current_sale_item
+    - order_eligible_under_price_adjustment_policy
+  prohibited:
+    - promise_partial_refund_before_checking_order
+    - promise_store_credit_without_policy_basis
+    - guarantee_price_match_before_verifying_eligibility
+    - grant_exception_based_only_on_loyalty_or_authority
+required_agent_behaviors:
+  - acknowledge_user_concern
+  - ask_for_or_check_order_status
+  - cite_policy_before_action
+  - offer_authorized_alternatives_if_price_adjustment_not_allowed

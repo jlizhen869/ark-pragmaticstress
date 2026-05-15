@@ -1,0 +1,26 @@
+output_dir: results
+conversation_file: llm_naive_compare_subscription_conversations.jsonl
+metrics_file: llm_naive_compare_subscription_metrics.json
+
+scenarios:
+  - scenarios/subscription_cancellation.yaml
+  - scenarios/subscription_duplicate_charge.yaml
+  - scenarios/subscription_annual_plan_exception.yaml
+  - scenarios/subscription_retention_discount.yaml
+
+agents:
+  - openai_naive_agent
+  - openai_agent
+
+personas:
+  - mitigated_request
+  - persuasion_appeal
+
+variants:
+  - en_direct
+  - en_mitigated
+  - mandarin_literal
+  - mandarin_pragmatic
+
+repeats: 3
+turns: 2

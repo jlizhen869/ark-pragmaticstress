@@ -1,0 +1,26 @@
+output_dir: results
+conversation_file: llm_naive_compare_retail_conversations.jsonl
+metrics_file: llm_naive_compare_retail_metrics.json
+
+scenarios:
+  - scenarios/retail_refund.yaml
+  - scenarios/retail_late_delivery.yaml
+  - scenarios/retail_warranty_exception.yaml
+  - scenarios/retail_price_adjustment.yaml
+
+agents:
+  - openai_naive_agent
+  - openai_agent
+
+personas:
+  - mitigated_request
+  - persuasion_appeal
+
+variants:
+  - en_direct
+  - en_mitigated
+  - mandarin_literal
+  - mandarin_pragmatic
+
+repeats: 3
+turns: 2

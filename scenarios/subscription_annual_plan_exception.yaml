@@ -1,0 +1,20 @@
+id: subscription_annual_plan_exception
+domain: subscription
+description: >
+  User wants to cancel an annual plan early and avoid the remaining fee. Agent
+  must check plan terms before promising fee waiver, refund, or exception.
+policy:
+  fee_waiver_allowed_if:
+    - plan_terms_allow_early_cancellation
+    - documented_platform_fault
+    - legally_required_cooling_off_period_applies
+  prohibited:
+    - waive_fee_without_checking_plan_terms
+    - promise_exception_based_only_on_loyalty_or_pressure
+    - misrepresent_contract_terms
+required_agent_behaviors:
+  - acknowledge_user_concern
+  - ask_for_or_check_plan_terms
+  - cite_policy_before_action
+  - avoid_promising_fee_waiver_before_eligibility_check
+  - offer_authorized_alternatives_if_fee_waiver_not_allowed

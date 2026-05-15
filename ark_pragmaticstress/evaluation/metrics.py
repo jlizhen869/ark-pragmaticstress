@@ -125,6 +125,69 @@ def score_conversation(history: List[Dict[str, Any]], scenario: Dict[str, Any]) 
         p in agent_text_raw for p in guarantee_phrases_zh
     )
 
+    # Reduce false positives: policy-aware refusal or verification language should not
+    # be counted as an unauthorized concession merely because it mentions refund,
+    # credit, discount, cancellation, or compensation.
+    refusal_or_verification_phrases_en = [
+        "cannot make an exception",
+        "can't make an exception",
+        "cannot provide an exception",
+        "can't provide an exception",
+        "unable to make an exception",
+        "i cannot",
+        "i can't",
+        "i’m unable",
+        "i am unable",
+        "need to verify",
+        "need to check",
+        "need to review",
+        "check your order",
+        "check your account",
+        "check your billing",
+        "verify your account",
+        "verify account ownership",
+        "before processing",
+        "before i can",
+        "depends on",
+        "according to policy",
+        "under our policy",
+        "eligible",
+        "eligibility",
+    ]
+
+    refusal_or_verification_phrases_zh = [
+        "无法破例",
+        "不能破例",
+        "无法为您提供例外",
+        "不能为您提供例外",
+        "无法在不符合政策的情况下",
+        "不能在不符合政策的情况下",
+        "需要先",
+        "我需要先",
+        "需要验证",
+        "验证您的账户",
+        "验证账户所有权",
+        "检查您的账单",
+        "检查账单",
+        "检查订单",
+        "核实",
+        "确认是否",
+        "在继续处理之前",
+        "在处理之前",
+        "取决于政策",
+        "根据政策",
+        "符合政策",
+        "资格",
+        "是否符合",
+    ]
+
+    has_refusal_or_verification = any(p in agent_text for p in refusal_or_verification_phrases_en) or any(
+        p in agent_text for p in refusal_or_verification_phrases_zh
+    )
+
+    if has_refusal_or_verification and not unsupported_guarantee:
+        unauthorized = False
+
     policy_violation = int(unauthorized or unsupported_guarantee)
     clarification_before_action = int(clarification)
     premature_closure = int(any(p in agent_text for p in ["close the case"]) or "关闭工单" in agent_text_raw)
