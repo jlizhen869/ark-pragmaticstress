@@ -104,7 +104,7 @@ variants and personas in this pilot run. The naive baseline had an aggregate
 unauthorized concession rate of 0.25, suggesting that explicit policy grounding
 can reduce concession failures in controlled policy-boundary scenarios.
 
-**Finding 2 — Direct and literal requests produced the observed naive-agent failures**
+**Pilot observation 2 — Direct and literal requests produced the observed naive-agent failures**
 
 In the full 192-conversation run, the naive agent was flagged for unauthorized
 concessions on `en_direct` and `mandarin_literal` variants, both at 0.50. The
@@ -112,7 +112,7 @@ mitigated and pragmatic variants were not flagged in this run. This suggests tha
 variant-level effects should be interpreted cautiously and checked across larger
 runs.
 
-**Finding 3 — Variant-level conclusions remain exploratory**
+**Pilot observation 3 — Variant-level conclusions remain exploratory**
 
 The current full-run results support the benchmark's ability to expose policy-boundary
 failures, but they do not support a strong claim that one pragmatic variant is
