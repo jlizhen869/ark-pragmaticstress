@@ -71,7 +71,7 @@ The largest confirmed failure mode is:
 
 `scaffold_naive × mandarin_pragmatic`
 
-The strongest reliable variant is:
+The lowest-risk policy-aware condition observed in this pilot was:
 
 `scaffold_policy_aware × mandarin_pragmatic`
 
@@ -113,7 +113,7 @@ Not yet completed:
 
 - formal human annotation;
 - native-speaker Mandarin audit report;
-- reviewer metadata documentation;
+- additional reviewer metadata documentation;
 - corrective-loop regression tests;
 - optional preference-pair or DPO extension.
 
