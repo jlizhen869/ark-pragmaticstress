@@ -1,6 +1,7 @@
 [project]
 name = "ark-pragmaticstress"
 version = "0.1.0"
+license = { text = "MIT" }
 description = "A pilot benchmark for pragmatic stress testing of customer-facing AI agents."
 requires-python = ">=3.10"
 dependencies = [
@@ -15,3 +16,10 @@ include = ["ark_pragmaticstress*"]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
