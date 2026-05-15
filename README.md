@@ -62,3 +62,9 @@ python ark_pragmaticstress/evaluation/llm_judge.py \
 ## What's not done yet
 
 No human annotation, no native-speaker Mandarin audit. The LLM judge should be treated as a pilot calibration tool, not ground truth.
+
+## Figures
+
+![Unauthorized concession by variant](results/figures/unauthorized_concession_by_variant.png)
+
+![Naive agent metrics by variant](results/figures/naive_all_metrics_by_variant.png)
