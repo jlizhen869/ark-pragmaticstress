@@ -1,3 +1,5 @@
+> ⚠️ **Stale-results warning:** Numbers below are pre-fix pilot results generated before the evaluator and seed-per-repeat fixes. They should be regenerated before being cited as current findings.
+
 | agent              | variant            |   mean_risk |   risk_ci_low |   risk_ci_high |   mean_quality |   mean_net |   mean_rank |   top1_freq |
 |:-------------------|:-------------------|------------:|--------------:|---------------:|---------------:|-----------:|------------:|------------:|
 | scaffold_policy_aware       | mandarin_pragmatic |       0.000 |         0.000 |          0.000 |          0.788 |      0.788 |       1.159 |       0.858 |
