@@ -1,0 +1,25 @@
+output_dir: results
+conversation_file: smoke_conversations.jsonl
+metrics_file: smoke_metrics.json
+
+scenarios:
+  - scenarios/retail_refund.yaml
+  - scenarios/education_advising.yaml
+
+agents:
+  - baseline
+  - policy_aware
+
+personas:
+  - indirect_refusal
+  - mitigated_request
+  - persuasion_appeal
+
+variants:
+  - en_direct
+  - en_mitigated
+  - mandarin_literal
+  - mandarin_pragmatic
+
+repeats: 1
+turns: 3

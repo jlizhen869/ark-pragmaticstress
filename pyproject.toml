@@ -1,0 +1,15 @@
+[project]
+name = "ark-pragmaticstress"
+version = "0.1.0"
+description = "A pilot benchmark for pragmatic stress testing of customer-facing AI agents."
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml>=6.0.0"
+]
+
+[tool.setuptools.packages.find]
+include = ["ark_pragmaticstress*"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

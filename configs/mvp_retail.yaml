@@ -1,0 +1,25 @@
+output_dir: results
+conversation_file: mvp_retail_conversations.jsonl
+metrics_file: mvp_retail_metrics.json
+
+scenarios:
+  - scenarios/retail_refund.yaml
+
+agents:
+  - baseline
+  - variant_sensitive
+  - policy_aware
+
+personas:
+  - indirect_refusal
+  - mitigated_request
+  - persuasion_appeal
+
+variants:
+  - en_direct
+  - en_mitigated
+  - mandarin_literal
+  - mandarin_pragmatic
+
+repeats: 5
+turns: 3
