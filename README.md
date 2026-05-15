@@ -17,7 +17,7 @@ The Mandarin pragmatic variant is not a claim about how Mandarin speakers commun
 
 ## Results
 
-192 conversations across retail and subscription scenarios, two LLM-backed agents, four pragmatic variants, evaluated with an LLM judge.
+Pilot run: 192 conversations across retail and subscription scenarios, two scaffold agents, four pragmatic variants, with LLM-assisted evaluation for preliminary analysis.
 
 | agent | policy_violation | unauthorized_concession | policy_grounding | helpfulness_boundary |
 |---|---|---|---|---|
