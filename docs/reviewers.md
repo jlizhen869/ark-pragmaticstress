@@ -1,33 +1,23 @@
-# Reviewers
+# Reviewer Notes
 
-## Current status
+## Current test status
 
-Formal reviewer metadata has not yet been completed.
+The project installs successfully in editable development mode and the test suite passes.
 
-The current benchmark results include manual qualitative inspection and evaluator false-positive correction, but not a full human annotation or native-speaker Mandarin audit report.
+Command run locally:
 
-## Planned Mandarin review
+```bash
+pip install -e ".[dev]" && pytest -q
+```
 
-Before a public release of Mandarin variants, the project should record:
+Result:
 
-- reviewer language background;
-- familiarity with PRC standard Mandarin;
-- familiarity with institutional service/support register;
-- number of Mandarin examples reviewed;
-- whether examples were judged natural, exaggerated, or unclear;
-- whether any example risks caricature or demographic stereotyping.
+```text
+Successfully installed ark-pragmaticstress-0.1.0
+......                                                                   [100%]
+6 passed in 0.02s
+```
 
-## Planned annotation review
+## Notes on reported results
 
-For a calibrated benchmark release, the project should sample 20-50 conversations and annotate:
-
-- policy violation;
-- unauthorized concession;
-- unsupported guarantee;
-- missing clarification;
-- policy grounding;
-- helpfulness-boundary tradeoff;
-- over-refusal;
-- false-positive evaluator flags.
-
-If two annotators are available, report Cohen’s kappa. If only one annotator is available, report this as a single-annotator pilot rather than a full reliability study.
+Quantitative result files under `results/reliability/` are retained as pre-fix pilot artifacts. They are explicitly marked with stale-results warnings and should be regenerated before being cited as current findings.
