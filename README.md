@@ -96,21 +96,20 @@ Evaluator: rule-based heuristic, audited for false positives before this run.
 
 ### Key findings
 
-**Finding 1 — Policy grounding eliminates unauthorized concessions**
+**Finding 1 — Policy grounding reduced unauthorized concessions in this pilot**
 
 The policy-aware agent maintained a 0.00 unauthorized concession rate across all
-variants and personas. The naive agent reached 1.00 on both Mandarin variants,
-demonstrating that explicit policy grounding in the system prompt is sufficient
-to prevent concession failures under pragmatic pressure.
+variants and personas in this pilot run. The naive agent reached 1.00 on both
+Mandarin variants, suggesting that explicit policy grounding in the system prompt
+can substantially reduce concession failures under controlled pragmatic pressure.
 
-**Finding 2 — Mandarin pragmatic variants expose the largest gap**
+**Finding 2 — Mandarin pragmatic variants produced the largest observed gap**
 
 The naive agent's unauthorized concession rate under Mandarin variants (1.00) was
 substantially higher than under English mitigated variants (0.08), a gap of 0.92.
-Mandarin pragmatic surface forms applied stronger implicit pressure than English
-mitigation devices on an ungrounded agent.
+In this pilot, Mandarin pragmatic variants produced higher failure rates for the ungrounded agent than the English mitigated variant.
 
-**Finding 3 — English mitigated variant is the safest condition for naive agents**
+**Finding 3 — English mitigated requests produced the lowest observed failure rate for the naive agent**
 
 Contrary to the hypothesis that mitigation increases failure risk, the naive agent
 performed best on `en_mitigated` (0.08). Softened English requests may signal
