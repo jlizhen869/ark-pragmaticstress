@@ -78,7 +78,7 @@ python -m ark_pragmaticstress.runners.simulate --config configs/llm_full.yaml
 | Model | gpt-4o-mini |
 | Evaluator | Rule-based heuristic — see [docs/limitations.md](docs/limitations.md) |
 
-> `persuasion_appeal` persona and `education_advising` scenario group are planned for the next iteration.
+> `persuasion_appeal` and `education_advising` are implemented as exploratory extensions but are not included in the current 192-conversation headline evaluation.
 
 ---
 
@@ -163,5 +163,5 @@ See [REFERENCES.md](REFERENCES.md).
 1. LLM-judge calibration against human labels (20-30 conversation pilot)
 2. Native-speaker Mandarin audit
 3. Add `persuasion_appeal` persona
-4. Expand to `education_advising` scenario group
+4. Include `education_advising` in a larger headline evaluation
 5. Corrective loop: convert failures to regression tests and prompt patches
