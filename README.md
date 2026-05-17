@@ -70,3 +70,7 @@ No human annotation yet, and the Mandarin variants only have a single-author nat
 ![Unauthorized concession by variant](results/figures/unauthorized_concession_by_variant.png)
 
 ![Naive agent metrics by variant](results/figures/naive_all_metrics_by_variant.png)
+
+## Regression tests
+
+Known failure modes from the pilot are pinned as regression tests in `tests/test_regression.py`. Run with `pytest -q` to check if agent or evaluator changes shift the failure patterns.
